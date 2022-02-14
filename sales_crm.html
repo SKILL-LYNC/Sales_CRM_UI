@@ -1,0 +1,229 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Meta links-->
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta name="keywords" content="Skill-Lync CRM, CRM Dashboard, CRM">
+	<meta name="description" content="Skill-Lync CRM Admistrator Dashboard Page">
+	<meta name="author" content="Skill-Lync">
+	<meta name="robot" content="index, follow">
+	
+	<!-- Title -->
+	<title>Settings</title>
+	
+	 
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/select2.min.css">
+	<link rel="stylesheet" href="css/ionicons.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link href="css/fullcalendar.min.css" rel="stylesheet">
+	<link href="css/quill.snow.css" rel="stylesheet">
+	<link href="css/spectrum.css" rel="stylesheet">
+	<!-- DashForge CSS -->
+	<link rel="stylesheet" href="css/dashforge.css">
+	<link rel="stylesheet" href="css/sales_crm.css">
+	
+	<link rel="stylesheet" href="css/bootstrap-clockpicker.css">
+	
+</head>
+
+   <body>
+   	<header>
+	<nav class="navbar navbar-header navbar-expand-lg d-none-lg justify-content-between bg-gray-100 ">
+		<div class="navbar-brand">
+			<a class=""><img src="images/crm/footer_logo.png" class="wd-auto ht-20" id="" alt="logo"></a>
+		</div><!-- navbar-brand -->
+		<div  class="navbar-menu-wrapper justify-content-end pd-r-0" id="navbar-content">
+			<div class="nav navbar-menu bd-r hide-nav" id="navbar-menu">
+				<div class="nav-item with-sub sub-menu">
+					<a class="nav-link drop-icon" href="#" role="button"> Dashboard</a>
+				
+					<div class="navbar-menu-sub sub-drop" >
+						<div class="nav-sub-item d-flex justify-content-between align-items-center " >
+							<a href="#" class="nav-sub-link mg-r-10" id="admin">Administrator Dashboard</a>
+							<div class="d-flex">
+							<a href="#" class="tx-dark mg-r-10"><i class="fa fa-pencil"></i></a>
+							<a href="#" class="tx-dark"><i class="fa fa-check-circle"></i></a>
+							</div>
+						</div>
+						
+						
+						<div class="mg-b-0 pd-l-5-f pd-10 tx-gray-700 tx-12">MY DASHBOARDS</div>
+						
+						<div class="nav-sub-item d-flex justify-content-between align-items-center">
+							<a href="#" class="nav-sub-link" id="admin">Custom sales activity</a>
+							<div class="d-flex">
+								<a href="#" class="tx-dark mg-r-10"><i class="fa fa-pencil"></i></a>
+								<a><i class="fa fa-trash-o"></i></a>
+							</div>
+						</div>
+						<div class="nav-sub-item">
+							<a  href="#" class="nav-sub-link" ><i class="fa fa-plus mg-r-5"></i> Create New Dashboard</a>
+						</div>
+					</div>	
+				</div>
+				<div class="nav-item with-sub sub-menu">
+					<a href="" class="nav-link drop-icon" >Content</a>
+					<div class="navbar-menu-sub sub-drop">
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Email Library</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Images &#38; Documents</a></div>
+					</div>
+				</div>
+						
+				<div class="nav-item with-sub sub-menu">
+					<a href="" class="nav-link drop-icon">Marketing</a>
+					<div class="navbar-menu-sub  sub-drop">
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Email Campaigns</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Landing Pages</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Website Widgets</a></div>
+					</div>
+				</div>
+						
+				<div class="nav-item with-sub sub-menu">
+					<a href="" class="nav-link drop-icon">Leads</a>
+					<div class="navbar-menu-sub sub-drop">
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Smart Views</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Leads</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Activities</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Tasks</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Lists</a></div>
+					</div>
+				</div>
+						
+				<div class="nav-item with-sub sub-menu">
+					<a href="" class="nav-link drop-icon">Workflow</a>
+					<div class="navbar-menu-sub sub-drop">
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Automation</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Forms</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Process Designer</a></div>
+					</div>
+				</div>
+						
+				<div class="nav-item with-sub sub-menu">
+					<a href="" class="nav-link drop-icon">Apps</a>
+					<div class="navbar-menu-sub sub-drop">
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Apps</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Apps Marketplace</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Connect My Inbox</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Dashlet Builder</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Lead Marketplaces</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Adwords Data Sync</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Facebook Retargeting</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">WhatsApp Templates</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">WhatsApp Reports</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Kaleyra SMS Template</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">SMS Templates</a></div>
+					</div>
+				</div>
+				<div class="nav-item with-sub sub-menu">
+					<a href="" class="nav-link drop-icon">Reports</a>
+					<div class="navbar-menu-sub sub-drop">
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Apps</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Apps Marketplace</a></div>
+						<div class="nav-sub-item"><a href="#" class="nav-sub-link">Connect My Inbox</a></div>	
+					</div><!-- nav-sub -->
+				</div>
+			</div>
+		</div>
+			
+		<div class="navbar-right justify-content-end">
+			
+			<div class="dropdown dropdown-profile mg-r-10 nav-right-menu">
+				<a href="" class="dropdown-link nav-right-icon" data-toggle="dropdown" data-display="static">
+					<img src="images/crm/search.png" class="wd-20 ht-20" alt="search">
+				</a><!-- dropdown-link -->
+				<div class="dropdown-menu dropdown-menu-right pd-15-f nav-right-drop">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search Leads" aria-label="button-search-lead" aria-describedby="button-search-lead">
+					<div class="input-group-append">
+						<button class="btn btn-light" type="button" id="button-search-lead"><i class="fa fa-search"></i></button>
+					</div>
+				</div>
+				</div>
+			</div>
+						
+			<div class="dropdown dropdown-profile mg-r-10 ">
+				<a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
+					<img src="images/crm/question.png" class="wd-20 ht-20" alt="question_Mark">
+				</a><!-- dropdown-link -->
+				<div class="dropdown-menu dropdown-menu-right pd-15-f">
+					<a href="#" class="dropdown-item nav-right-item">Manage Apps</a>
+					<a href="#" class="dropdown-item nav-right-item">Apps Marketplace</a>
+					<a href="#" class="dropdown-item nav-right-item">Connect My Inbox</a>
+				</div>
+			</div>
+							
+			<div class="dropdown dropdown-profile">
+				<a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
+					<img src="images/crm/user.svg" class="img-fluid ht-25" alt="user">
+				</a><!-- dropdown-link -->
+				<div class="dropdown-menu dropdown-menu-right tx-13 pd-15-f">
+					<a href="#" class="dropdown-item nav-right-item">Sarang V</a>
+					<a href="#" class="dropdown-item tx-11 nav-right-item">sarang@skill-lync.com</a>
+					<a href="#" class="dropdown-item nav-right-item">Skill Lync</a>
+					<div class="dropdown-divider"></div>
+					<a href="<?php echo base_url();?>settings" class="dropdown-item nav-right-item"><i class="fa fa-cogs mg-r-10"></i>Settings</a>
+					<a href="#" class="dropdown-item nav-right-item"><i class="fa fa-user-plus mg-r-10"></i>Manage Users</a>
+					<a href="#" class="dropdown-item nav-right-item"><i class="fa  fa-power-off mg-r-10"></i>Signout</a>
+				</div>
+			</div>
+			<div class="side-nav-btn">
+				<i class="fa fa-bars"></i>
+			</div>
+		
+		</div><!-- navbar-right -->
+		
+	</nav><!-- navbar -->
+</header><!-- Navbar Header-->
+ <div class="container-fluid sal_crm_bg">
+      <div class="row">
+        <div class="col-md-3"> Sara </div>
+        <div class="col-md-6"> Gopi </div>
+        <div class="col-md-3"> Deepika </div>
+      </div>
+    </div>
+
+
+<footer>
+	<div class="container-fluid bg-dark fixed-bottom">
+		<div class="row row-xs">
+			<div class="col-md-12 pd-15">
+				<ul class=" customer-li pd-l-0 mg-b-0 tx-10" >
+					<li class="d-inline" >
+						<a href="#" class="tx-white footer-a" id="">&#169; 2021 Skill Lync Inc. All Rights Reserved</a>
+					</li>
+					<li class="d-inline"><a href="#" class="footer-a">Help</a></li>
+					<li class="d-inline"><a href="#" class="footer-a">Terms of Service</a></li>
+					<li class="d-inline"><a href="#" class="footer-a">Privacy Policy</a></li>
+					<li class="d-inline"><a href="#" class="footer-a">Acceptable Use</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- JS -->
+	
+</footer>
+   <script src="js/jquery.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/select2.min.js"></script>
+	<script src="js/jquery-clockpicker.min.js"></script>
+	<script src="js/feather.min.js"></script>
+	<script src="js/quill.js"></script>
+	<script src="js/typeahead.jquery.min.js"></script>
+	<script src="js/spectrum.js"></script>
+	<script src="js/dashforge.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/jquery.steps.min.js"></script>
+	
+	<script src="js/jquery-clockpicker.min.js"></script>
+	
+</body>
+</html>
