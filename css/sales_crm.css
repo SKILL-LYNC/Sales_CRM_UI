@@ -105,12 +105,7 @@ margin-top: 17px;
 width: 14px;
 }
 
-.accordion_container {
-	height:50vh;
-	overflow-y:auto;
-	overflow-x:hidden;
-}
-
+ 
 .call_container{
     background: #0A1931;
     box-shadow: 0px -4px 8px rgba(10, 25, 49, 0.1);
@@ -210,6 +205,7 @@ width: 14px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	cursor: pointer;
 }
 .status_red{
 	background-color: #FFF0F2;
@@ -334,7 +330,7 @@ padding: 10px;
 
 .crs_list_purc li{
 	list-style: none;
-	margin: 10px 0;
+	margin: 5px 0;
 }
 
 .crs_list_purc li a{
@@ -405,6 +401,10 @@ padding: 10px;
 		}
 /*End of deepika css*/
 
+  .left_container{
+height:92vh;
+	overflow:auto;
+}
 .right_conainer{
 	height:80vh;
 	overflow:auto;
