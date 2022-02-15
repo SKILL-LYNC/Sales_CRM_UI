@@ -105,7 +105,11 @@ margin-top: 17px;
 width: 14px;
 }
 
-
+.accordion_container {
+	height:50vh;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
 
 .call_container{
     background: #0A1931;
@@ -124,7 +128,7 @@ width: 14px;
     font-size: 30;
     font-size: 25px;
 }
-			.call_timing{}
+			.call_timing span{ color:#FFC900}
 			.call_activity{
     display: flex;
     align-items: center;
@@ -152,6 +156,34 @@ width: 14px;
 			.call_right{}
 			.call_cut{
     background: red !important;
+}
+.source_container{
+    /* position: relative; */
+}
+.source_container a{
+    padding: 10px 40px 10px 10px;
+    display: block;
+    background: #E6F5FF;
+    box-shadow: 2px 2px 4px rgba(10, 25, 49, 0.15);
+    border-radius: 2px;
+    color: #000;
+    margin-right: 10px;
+    position: relative;
+}
+.source_container .source_count{
+    font-size: 14px;
+}
+.source_container .source_from{
+    font-weight: 600;
+}
+.source_container .source_hc{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #63d774;
+    border-top-right-radius: 2px;
+    color: #fff;
+    padding: 0 4px;
 }
 
 /*Gopi Css*/
@@ -206,6 +238,23 @@ width: 14px;
 	padding: 2px 10px;
 	font-weight: 500;
 	white-space: nowrap;
+	cursor: pointer;
+}
+
+.btn-cust:hover{
+	color: #146CC5;
+	border:1px solid #146CC5;
+
+}
+.active_btn{
+	background: #146CC5;
+	color: #fff !important;
+	border:0.5px solid #146CC5;
+}
+
+.active_btn:hover{
+	color: #ffffff !important;
+	border:1px solid #146CC5;
 }
 
 .sal_crm_tab .card-body{
@@ -270,13 +319,13 @@ padding: 10px;
 
 .bg_red{
 	background: #F93A5C;
-	color: #fff;
+	color: #fff !important;
 	border:1px solid #F93A5C;
 }
 
 .bg_green{
 	background: #48CB6F;
-	color: #fff;
+	color: #fff !important;
 	border:1px solid #48CB6F;
 }
 .crs_list_purc {
@@ -290,12 +339,13 @@ padding: 10px;
 
 .crs_list_purc li a{
 	text-decoration: underline;
+	font-size: 12px;
 }
 .bd, input::placeholder { 
 	color: #aeafb1;
 	font-size: 10px;
 	font-weight: 500;
-	padding: 2px 5px;
+	padding: 5px;
   }
 
   textarea::placeholder { 
@@ -323,7 +373,6 @@ padding: 10px;
   }
 /*End of Gopi Css*/
 
-
 /*deepika css*/
 .text-wrap
 		{
@@ -337,8 +386,26 @@ padding: 10px;
 		{
 			background-color:#F2FFFB;
 		}
-		.btn:hover
+		.blue_btn:hover
 		{
 			color:white !important;
 		}
+		.call_quality_container{
+			
+			box-shadow: 0px -4px 8px rgba(10, 25, 49, 0.1);
+			color: black;
+			position: fixed;
+			width: 100%;
+			bottom: 0;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 10px 20px;
+			margin-left:-15px;
+		}
 /*End of deepika css*/
+
+.right_conainer{
+	height:80vh;
+	overflow:auto;
+}
