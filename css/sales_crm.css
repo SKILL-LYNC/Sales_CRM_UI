@@ -594,7 +594,9 @@ input:focus {
 	background: #48CB6F;
 	color: #fff !important;
 }
-
+.bg_dark_green:hover{
+	border: 1px solid #0aab34;
+}
 
 /*End of Add Details*/
 
