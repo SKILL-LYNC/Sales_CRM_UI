@@ -249,8 +249,8 @@ body {
 	border: 0.5px solid #F93A5C;
 	font-size: 10px;
 	font-weight: 400;
-	color: #F93A5C;
-	font-weight: 500;
+	color: #F93A5C !important;
+	font-weight: 500 !important;
 }
 
 .status_green {
@@ -258,8 +258,17 @@ body {
 	border: 0.5px solid #48CB6F;
 	font-size: 10px;
 	font-weight: 400;
-	color: #077752;
-	font-weight: 500;
+	color: #077752 !important;
+	font-weight: 500 !important;
+}
+
+.team_ranking{
+	background-color: #F1FFD1;
+	border: 0.5px solid #F1FFD1;
+	font-size: 10px;
+	font-weight: 400;
+	color: #077752 !important;
+	font-weight: 500 !important;
 }
 
 .btn-cust {
@@ -637,7 +646,7 @@ input:focus {
 	background:#fff;
 }
 .lead_details_container table td{
-	font-size:13px !important;
+	font-size: 12px !important;
 }
 .lead_details_container table th{
 	background-image: linear-gradient(180deg, #0A1931 0%, #0052A5 100%) !important;
@@ -654,5 +663,11 @@ input:focus {
 
  
 .lead_details_container table th,.lead_details_container table td{
-	padding: 15px 10px
+	padding: 14px 10px !important;
+}
+.dataTables_length{
+	float: right !important;
+}
+.dataTables_filter{
+	float: left !important;
 }
