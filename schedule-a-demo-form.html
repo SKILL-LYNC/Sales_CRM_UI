@@ -1,0 +1,574 @@
+<?php
+   defined('BASEPATH') OR exit('No direct script access allowed');
+   ?><!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Meta links-->
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1" name="viewport">
+      <meta name="keywords" content="Skill-Lync CRM, CRM Dashboard, CRM">
+      <meta name="description" content="Skill-Lync CRM Admistrator Dashboard Page">
+      <meta name="author" content="Skill-Lync">
+      <meta name="robot" content="index, follow">
+      <!-- Title -->
+      <title>Lead - Home </title>
+      <!-- CSS -->
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/select2.min.css">
+      <link rel="stylesheet" href="css/ionicons.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="css/fullcalendar.min.css" rel="stylesheet">
+      <link href="css/quill.snow.css" rel="stylesheet">
+      <link href="css/spectrum.css" rel="stylesheet">
+      <!-- DashForge CSS -->
+      <link rel="stylesheet" href="css/dashforge.css">
+      <link rel="stylesheet" href="css/sales_crm.css">
+      <link rel="stylesheet" href="css/bootstrap-clockpicker.css">
+      <link rel="stylesheet" href="css/responsive.dataTables.min.css">
+	  
+	 
+	  <style>
+		.modal_scroll
+		{
+			overflow-y: auto;
+			display: block;
+			max-height: 380px;
+		}
+		.custom_modal input{
+			height:30px;
+		}
+		.custom_modal label{
+			font-size:12px;
+			color:#0168fa;
+			font-weight:400;
+		}
+	  </style>
+   </head>
+   <body>
+      
+      <!-- Navbar Header-->
+		
+			<div class="row">
+				<div class="col-md-3">
+				  
+				   
+					 <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-14 tx-bold" data-toggle="modal" data-target="#schedule_a_demo"><i class="fa fa-cog mg-r-10" aria-hidden="true"></i>Form</button>
+				  </div>
+			</div>
+		  
+     
+    
+    
+
+      <div class="modal fade select-modal-parent show" id="schedule_a_demo" tabindex="-1" role="dialog" aria-labelledby="autodial_setting" >
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header bd-b-0-f">
+                    <h5 class="modal-title" id="lead_details_box_edittitle">Schedule a Demo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+              
+                <div class="modal-body  modal_scroll custom_modal">
+                    <div>
+						<form>
+							<div class="row tx-12"> 
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Lead Name</label>
+										<input type="text" class="form-control" required="">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Lead Email</label>
+										<input type="text" class="form-control" required="">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+				  <li class="nav-item">
+					<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Session Information</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Lead Details</a>
+				  </li>
+				 
+				</ul>
+				<div class="tab-content bd bd-gray-300 bd-t-0 pd-15-f" id="myTabContent">
+				  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<form>
+					
+							<div class="form-group">
+								<label>Title<span class="tx-danger">*</span></label>
+								<input type="text" class="form-control" required="">
+							</div>
+						
+							<div class="form-group">
+								<label>Description</label>
+								<textarea class="form-control" rows="2"></textarea>
+							</div>
+                               
+							<div class="row"> 
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Online  or Offline<span class="tx-danger">*</span></label>
+										<select class="form-control">
+											<option>Online</option>
+											<option>Offline</option>
+									  </select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Is the session is for career counselling?<span class="tx-danger">*</span></label>
+										<select class="form-control">
+											<option>Yes</option>
+											<option>No</option>
+											
+									  </select>
+									</div>
+								</div>
+							</div>
+							<div class="row"> 
+                                <div class="col-md-6">
+                                    <div class="form-group">
+										<label>Session Date<span class="tx-danger">*</span></label>
+										<input type="text" class="form-control slot_date">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Session Slot<span class="tx-danger">*</span><span class="tx-danger tx-10">slot displayed based on available demo engineers</span></label>
+										<input type="text" class="form-control clockpicker">
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-time"></span>
+										</span>
+									</div>
+                                </div>
+                            </div>
+							<div class="row"> 
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Course Name</label>
+									<select class="form-control select_search">
+										<option>Career Guidance</option>
+										<option>Product Explanation</option>
+										<option>Closure</option>
+								  </select>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Course Price(Conveyed to customer)</label>
+									<input type="text" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="row"> 
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Purpose of the demo</label>
+									<select class="form-control">
+										<option>Career Guidance</option>
+										<option>Product Explanation</option>
+										<option>Closure</option>
+								  </select>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Sales Engineer domain</label>
+									<select class="form-control select_search">
+										<option>Tamil Nadu</option>
+										<option>Andhdra</option>
+										<option>Karnataka</option>
+										<option>Kerala</option>
+								  </select>
+								</div>
+							</div>
+						</div>
+					</form>
+				  </div>
+				  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<form>
+						
+						<div class="row"> 
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Lead Phone</label>
+									<div class="input-group form-group">
+									<div class="input-group-prepend" style="width:20%;">
+										<input type="hidden" name="country" id="country" value="11">
+										<select class="form-control custom-input country" name="country_code" required="" style="border-top-right-radius:0px; border-bottom-right-radius:0px;">
+											<option value="+93" data-country="1">Afghanistan (+93)</option>
+											<option value="+358" data-country="2">Aland Islands (+358)</option>
+											<option value="+355" data-country="3">Albania (+355)</option>
+											<option value="+213" data-country="4">Algeria (+213)</option>
+											<option value="+1" data-country="5">American Samoa (+1)</option>
+											<option value="+376" data-country="6">Andorra (+376)</option>
+											<option value="+244" data-country="7">Angola (+244)</option>
+											<option value="+1" data-country="8">Anguilla (+1)</option>
+											<option value="+672" data-country="9">Antarctica (+672)</option>
+											<option value="+1" data-country="10">Antigua And Barbuda (+1)</option>
+											<option value="+54" data-country="11">Argentina (+54)</option>
+											<option value="+374" data-country="12">Armenia (+374)</option>
+											<option value="+297" data-country="13">Aruba (+297)</option>
+											<option value="+61" data-country="14">Australia (+61)</option>
+											<option value="+43" data-country="15">Austria (+43)</option>
+											<option value="+994" data-country="16">Azerbaijan (+994)</option>
+											<option value="+1" data-country="17">Bahamas The (+1)</option>
+											<option value="+973" data-country="18">Bahrain (+973)</option>
+											<option value="+880" data-country="19">Bangladesh (+880)</option>
+											<option value="+1" data-country="20">Barbados (+1)</option>
+											<option value="+375" data-country="21">Belarus (+375)</option>
+											<option value="+32" data-country="22">Belgium (+32)</option>
+											<option value="+501" data-country="23">Belize (+501)</option>
+											<option value="+229" data-country="24">Benin (+229)</option>
+											<option value="+1" data-country="25">Bermuda (+1)</option>
+											<option value="+975" data-country="26">Bhutan (+975)</option>
+											<option value="+591" data-country="27">Bolivia (+591)</option>
+											<option value="+387" data-country="28">Bosnia and Herzegovina (+387)</option>
+											<option value="+267" data-country="29">Botswana (+267)</option>
+											<option value="+47" data-country="30">Bouvet Island (+47)</option>
+											<option value="+55" data-country="31">Brazil (+55)</option>
+											<option value="+246" data-country="32">British Indian Ocean Territory (+246)</option>
+											<option value="+673" data-country="33">Brunei (+673)</option>
+											<option value="+359" data-country="34">Bulgaria (+359)</option>
+											<option value="+226" data-country="35">Burkina Faso (+226)</option>
+											<option value="+257" data-country="36">Burundi (+257)</option>
+											<option value="+855" data-country="37">Cambodia (+855)</option>
+											<option value="+237" data-country="38">Cameroon (+237)</option>
+											<option value="+1" data-country="39">Canada (+1)</option>
+											<option value="+238" data-country="40">Cape Verde (+238)</option>
+											<option value="+1" data-country="41">Cayman Islands (+1)</option>
+											<option value="+236" data-country="42">Central African Republic (+236)</option>
+											<option value="+235" data-country="43">Chad (+235)</option>
+											<option value="+56" data-country="44">Chile (+56)</option>
+											<option value="+86" data-country="45">China (+86)</option>
+											<option value="+61" data-country="46">Christmas Island (+61)</option>
+											<option value="+61" data-country="47">Cocos (Keeling) Islands (+61)</option>
+											<option value="+57" data-country="48">Colombia (+57)</option>
+											<option value="+269" data-country="49">Comoros (+269)</option>
+											<option value="+242" data-country="50">Congo (+242)</option>
+											<option value="+243" data-country="51">Congo The Democratic Republic Of The (+243)</option>
+											<option value="+682" data-country="52">Cook Islands (+682)</option>
+											<option value="+506" data-country="53">Costa Rica (+506)</option>
+											<option value="+225" data-country="54">Cote DIvoire (Ivory Coast) (+225)</option>
+											<option value="+385" data-country="55">Croatia (Hrvatska) (+385)</option>
+											<option value="+53" data-country="56">Cuba (+53)</option>
+											<option value="+357" data-country="57">Cyprus (+357)</option>
+											<option value="+420" data-country="58">Czech Republic (+420)</option>
+											<option value="+45" data-country="59">Denmark (+45)</option>
+											<option value="+253" data-country="60">Djibouti (+253)</option>
+											<option value="+1" data-country="61">Dominica (+1)</option>
+											<option value="+1" data-country="62">Dominican Republic (+1)</option>
+											<option value="+670" data-country="63">East Timor (+670)</option>
+											<option value="+593" data-country="64">Ecuador (+593)</option>
+											<option value="+20" data-country="65">Egypt (+20)</option>
+											<option value="+503" data-country="66">El Salvador (+503)</option>
+											<option value="+240" data-country="67">Equatorial Guinea (+240)</option>
+											<option value="+291" data-country="68">Eritrea (+291)</option>
+											<option value="+372" data-country="69">Estonia (+372)</option>
+											<option value="+251" data-country="70">Ethiopia (+251)</option>
+											<option value="+500" data-country="71">Falkland Islands (+500)</option>
+											<option value="+298" data-country="72">Faroe Islands (+298)</option>
+											<option value="+679" data-country="73">Fiji Islands (+679)</option>
+											<option value="+358" data-country="74">Finland (+358)</option>
+											<option value="+33" data-country="75">France (+33)</option>
+											<option value="+594" data-country="76">French Guiana (+594)</option>
+											<option value="+689" data-country="77">French Polynesia (+689)</option>
+											<option value="+262" data-country="78">French Southern Territories (+262)</option>
+											<option value="+241" data-country="79">Gabon (+241)</option>
+											<option value="+220" data-country="80">Gambia The (+220)</option>
+											<option value="+995" data-country="81">Georgia (+995)</option>
+											<option value="+49" data-country="82">Germany (+49)</option>
+											<option value="+233" data-country="83">Ghana (+233)</option>
+											<option value="+350" data-country="84">Gibraltar (+350)</option>
+											<option value="+30" data-country="85">Greece (+30)</option>
+											<option value="+299" data-country="86">Greenland (+299)</option>
+											<option value="+1" data-country="87">Grenada (+1)</option>
+											<option value="+590" data-country="88">Guadeloupe (+590)</option>
+											<option value="+1" data-country="89">Guam (+1)</option>
+											<option value="+502" data-country="90">Guatemala (+502)</option>
+											<option value="+44" data-country="91">Guernsey and Alderney (+44)</option>
+											<option value="+224" data-country="92">Guinea (+224)</option>
+											<option value="+245" data-country="93">Guinea-Bissau (+245)</option>
+											<option value="+592" data-country="94">Guyana (+592)</option>
+											<option value="+509" data-country="95">Haiti (+509)</option>
+											<option value="+672" data-country="96">Heard and McDonald Islands (+672)</option>
+											<option value="+504" data-country="97">Honduras (+504)</option>
+											<option value="+852" data-country="98">Hong Kong S.A.R. (+852)</option>
+											<option value="+36" data-country="99">Hungary (+36)</option>
+											<option value="+354" data-country="100">Iceland (+354)</option>
+											<option value="+91" selected="" data-country="101">India (+91)</option>
+											<option value="+62" data-country="102">Indonesia (+62)</option>
+											<option value="+98" data-country="103">Iran (+98)</option>
+											<option value="+964" data-country="104">Iraq (+964)</option>
+											<option value="+353" data-country="105">Ireland (+353)</option>
+											<option value="+972" data-country="106">Israel (+972)</option>
+											<option value="+39" data-country="107">Italy (+39)</option>
+											<option value="+1" data-country="108">Jamaica (+1)</option>
+											<option value="+81" data-country="109">Japan (+81)</option>
+											<option value="+44" data-country="110">Jersey (+44)</option>
+											<option value="+962" data-country="111">Jordan (+962)</option>
+											<option value="+7" data-country="112">Kazakhstan (+7)</option>
+											<option value="+254" data-country="113">Kenya (+254)</option>
+											<option value="+686" data-country="114">Kiribati (+686)</option>
+											<option value="+850" data-country="115">Korea North (+850)</option>
+											<option value="+82" data-country="116">Korea South (+82)</option>
+											<option value="+965" data-country="117">Kuwait (+965)</option>
+											<option value="+996" data-country="118">Kyrgyzstan (+996)</option>
+											<option value="+856" data-country="119">Laos (+856)</option>
+											<option value="+371" data-country="120">Latvia (+371)</option>
+											<option value="+961" data-country="121">Lebanon (+961)</option>
+											<option value="+266" data-country="122">Lesotho (+266)</option>
+											<option value="+231" data-country="123">Liberia (+231)</option>
+											<option value="+218" data-country="124">Libya (+218)</option>
+											<option value="+423" data-country="125">Liechtenstein (+423)</option>
+											<option value="+370" data-country="126">Lithuania (+370)</option>
+											<option value="+352" data-country="127">Luxembourg (+352)</option>
+											<option value="+853" data-country="128">Macau S.A.R. (+853)</option>
+											<option value="+389" data-country="129">Macedonia (+389)</option>
+											<option value="+261" data-country="130">Madagascar (+261)</option>
+											<option value="+265" data-country="131">Malawi (+265)</option>
+											<option value="+60" data-country="132">Malaysia (+60)</option>
+											<option value="+960" data-country="133">Maldives (+960)</option>
+											<option value="+223" data-country="134">Mali (+223)</option>
+											<option value="+356" data-country="135">Malta (+356)</option>
+											<option value="+44" data-country="136">Man (Isle of) (+44)</option>
+											<option value="+692" data-country="137">Marshall Islands (+692)</option>
+											<option value="+596" data-country="138">Martinique (+596)</option>
+											<option value="+222" data-country="139">Mauritania (+222)</option>
+											<option value="+230" data-country="140">Mauritius (+230)</option>
+											<option value="+262" data-country="141">Mayotte (+262)</option>
+											<option value="+52" data-country="142">Mexico (+52)</option>
+											<option value="+691" data-country="143">Micronesia (+691)</option>
+											<option value="+373" data-country="144">Moldova (+373)</option>
+											<option value="+377" data-country="145">Monaco (+377)</option>
+											<option value="+976" data-country="146">Mongolia (+976)</option>
+											<option value="+382" data-country="147">Montenegro (+382)</option>
+											<option value="+1" data-country="148">Montserrat (+1)</option>
+											<option value="+212" data-country="149">Morocco (+212)</option>
+											<option value="+258" data-country="150">Mozambique (+258)</option>
+											<option value="+95" data-country="151">Myanmar (+95)</option>
+											<option value="+264" data-country="152">Namibia (+264)</option>
+											<option value="+674" data-country="153">Nauru (+674)</option>
+											<option value="+977" data-country="154">Nepal (+977)</option>
+											<option value="+31" data-country="156">Netherland (+31)</option>
+											<option value="+599" data-country="155">Netherlands Antilles (+599)</option>
+											<option value="+687" data-country="157">New Caledonia (+687)</option>
+											<option value="+64" data-country="158">New Zealand (+64)</option>
+											<option value="+505" data-country="159">Nicaragua (+505)</option>
+											<option value="+227" data-country="160">Niger (+227)</option>
+											<option value="+234" data-country="161">Nigeria (+234)</option>
+											<option value="+683" data-country="162">Niue (+683)</option>
+											<option value="+672" data-country="163">Norfolk Island (+672)</option>
+											<option value="+1" data-country="164">Northern Mariana Islands (+1)</option>
+											<option value="+47" data-country="165">Norway (+47)</option>
+											<option value="+968" data-country="166">Oman (+968)</option>
+											<option value="+92" data-country="167">Pakistan (+92)</option>
+											<option value="+680" data-country="168">Palau (+680)</option>
+											<option value="+970" data-country="169">Palestinian Territory Occupied (+970)</option>
+											<option value="+507" data-country="170">Panama (+507)</option>
+											<option value="+675" data-country="171">Papua new Guinea (+675)</option>
+											<option value="+595" data-country="172">Paraguay (+595)</option>
+											<option value="+51" data-country="173">Peru (+51)</option>
+											<option value="+63" data-country="174">Philippines (+63)</option>
+											<option value="+870" data-country="175">Pitcairn Island (+870)</option>
+											<option value="+48" data-country="176">Poland (+48)</option>
+											<option value="+351" data-country="177">Portugal (+351)</option>
+											<option value="+1" data-country="178">Puerto Rico (+1)</option>
+											<option value="+974" data-country="179">Qatar (+974)</option>
+											<option value="+262" data-country="180">Reunion (+262)</option>
+											<option value="+40" data-country="181">Romania (+40)</option>
+											<option value="+7" data-country="182">Russia (+7)</option>
+											<option value="+250" data-country="183">Rwanda (+250)</option>
+											<option value="+290" data-country="184">Saint Helena (+290)</option>
+											<option value="+1" data-country="185">Saint Kitts And Nevis (+1)</option>
+											<option value="+1" data-country="186">Saint Lucia (+1)</option>
+											<option value="+508" data-country="187">Saint Pierre and Miquelon (+508)</option>
+											<option value="+1" data-country="188">Saint Vincent And The Grenadines (+1)</option>
+											<option value="+590" data-country="189">Saint-Barthelemy (+590)</option>
+											<option value="+590" data-country="190">Saint-Martin (French part) (+590)</option>
+											<option value="+685" data-country="191">Samoa (+685)</option>
+											<option value="+378" data-country="192">San Marino (+378)</option>
+											<option value="+239" data-country="193">Sao Tome and Principe (+239)</option>
+											<option value="+966" data-country="194">Saudi Arabia (+966)</option>
+											<option value="+221" data-country="195">Senegal (+221)</option>
+											<option value="+381" data-country="196">Serbia (+381)</option>
+											<option value="+248" data-country="197">Seychelles (+248)</option>
+											<option value="+232" data-country="198">Sierra Leone (+232)</option>
+											<option value="+65" data-country="199">Singapore (+65)</option>
+											<option value="+421" data-country="200">Slovakia (+421)</option>
+											<option value="+386" data-country="201">Slovenia (+386)</option>
+											<option value="+677" data-country="202">Solomon Islands (+677)</option>
+											<option value="+252" data-country="203">Somalia (+252)</option>
+											<option value="+27" data-country="204">South Africa (+27)</option>
+											<option value="+500" data-country="205">South Georgia (+500)</option>
+											<option value="+211" data-country="206">South Sudan (+211)</option>
+											<option value="+34" data-country="207">Spain (+34)</option>
+											<option value="+94" data-country="208">Sri Lanka (+94)</option>
+											<option value="+249" data-country="209">Sudan (+249)</option>
+											<option value="+597" data-country="210">Suriname (+597)</option>
+											<option value="+47" data-country="211">Svalbard And Jan Mayen Islands (+47)</option>
+											<option value="+268" data-country="212">Swaziland (+268)</option>
+											<option value="+46" data-country="213">Sweden (+46)</option>
+											<option value="+41" data-country="214">Switzerland (+41)</option>
+											<option value="+963" data-country="215">Syria (+963)</option>
+											<option value="+886" data-country="216">Taiwan (+886)</option>
+											<option value="+992" data-country="217">Tajikistan (+992)</option>
+											<option value="+255" data-country="218">Tanzania (+255)</option>
+											<option value="+66" data-country="219">Thailand (+66)</option>
+											<option value="+228" data-country="220">Togo (+228)</option>
+											<option value="+690" data-country="221">Tokelau (+690)</option>
+											<option value="+676" data-country="222">Tonga (+676)</option>
+											<option value="+1" data-country="223">Trinidad And Tobago (+1)</option>
+											<option value="+216" data-country="224">Tunisia (+216)</option>
+											<option value="+90" data-country="225">Turkey (+90)</option>
+											<option value="+993" data-country="226">Turkmenistan (+993)</option>
+											<option value="+1" data-country="227">Turks And Caicos Islands (+1)</option>
+											<option value="+688" data-country="228">Tuvalu (+688)</option>
+											<option value="+256" data-country="229">Uganda (+256)</option>
+											<option value="+380" data-country="230">Ukraine (+380)</option>
+											<option value="+971" data-country="231">United Arab Emirates (+971)</option>
+											<option value="+44" data-country="232">United Kingdom (+44)</option>
+											<option value="+1" data-country="233">United States (+1)</option>
+											<option value="+1" data-country="234">United States Minor Outlying Islands (+1)</option>
+											<option value="+598" data-country="235">Uruguay (+598)</option>
+											<option value="+998" data-country="236">Uzbekistan (+998)</option>
+											<option value="+678" data-country="237">Vanuatu (+678)</option>
+											<option value="+379" data-country="238">Vatican City State (Holy See) (+379)</option>
+											<option value="+58" data-country="239">Venezuela (+58)</option>
+											<option value="+84" data-country="240">Vietnam (+84)</option>
+											<option value="+1" data-country="241">Virgin Islands (British) (+1)</option>
+											<option value="+1" data-country="242">Virgin Islands (US) (+1)</option>
+											<option value="+681" data-country="243">Wallis And Futuna Islands (+681)</option>
+											<option value="+212" data-country="244">Western Sahara (+212)</option>
+											<option value="+967" data-country="245">Yemen (+967)</option>
+											<option value="+260" data-country="246">Zambia (+260)</option>
+											<option value="+263" data-country="247">Zimbabwe (+263)</option>
+										</select>
+									</div>
+									<input type="text" class="form-control" style="width:60%;" name="phone_number" id="phone_number" required="" autocomplete="off">
+								</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Lead State</label>
+									<select class="form-control select_search">
+										<option>Tamil Nadu</option>
+										<option>Andhdra</option>
+										<option>Karnataka</option>
+										<option>Kerala</option>
+								  </select>
+								</div>
+							</div>
+						</div>
+						<div class="row"> 
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Lead City</label>
+									<select class="form-control select_search">
+										<option>Chennai</option>
+										<option>Bangalore</option>
+										<option>Hydrabed</option>
+										<option>Pune</option>
+								  </select>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Experience Level for this lead<span class="tx-danger">*</span></label>
+									<select class="form-control">
+										<option>Moderate</option>
+										<option>Low</option>
+										<option>High</option>
+								  </select>
+								</div>
+							</div>
+						</div>
+						<div class="row"> 
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Language<span class="tx-danger">*</span></label>
+									<select class="form-control">
+										<option>English</option>
+										<option>Tamil</option>
+										<option>Hindi</option>
+										
+								  </select>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Customer Profile</label>
+									<select class="form-control">
+										<option>Studying</option>
+										<option>Working</option>
+								  </select>
+								</div>
+							</div>
+						</div>
+					</form>
+				  </div>
+				  
+				</div>
+                        
+							
+                          
+                        
+                </div>
+                <div class="modal-footer bd-0-f">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/common.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+      <script src="js/select2.min.js"></script>
+      <script src="js/jquery-clockpicker.min.js"></script>
+      <script src="js/feather.min.js"></script>
+      <script src="js/quill.js"></script>
+      <script src="js/typeahead.jquery.min.js"></script>
+      <script src="js/spectrum.js"></script>
+      <script src="js/dashforge.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery.steps.min.js"></script>
+      <script src="js/jquery-clockpicker.min.js"></script>
+	  <script src="js/responsive.dataTables.min.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	  
+	 
+	    
+    
+       <script>
+        
+        $('.select_search').select2();
+	  
+	    $('.slot_date').datepicker();
+	  
+	  
+	    $('.clockpicker').clockpicker({
+			placement: 'top',
+			align: 'left',
+			donetext: 'Done'
+		});
+      </script>
+   </body>
+</html>
+
+
+
+
+ 

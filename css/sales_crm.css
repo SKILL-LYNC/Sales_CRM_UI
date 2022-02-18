@@ -653,12 +653,19 @@ input:focus {
 	color: #fff;
 	font-weight: 400 !important;
 }
-.lead_details_container table td span{
-	    padding: 4px;
+.lead_details_container table td .status_type_value{
+	  padding: 4px;
+	   border-radius: 3px;
+}
+.lead_details_container table td .status_type_value.opportunity{
+	  
 		color:#61a3f1;
     background: #e2effd;
-    border-radius: 3px;
+   
     border: 1px solid #61a3f1;
+}
+.status_change{
+	display:none;
 }
 
  
@@ -680,10 +687,10 @@ input:focus {
  
 
 
-.lead_details_container table ul.radio_btn  { 
-  
-  padding: 0;  
-  list-style: none; 
+.lead_details_container table ul.radio_btn  {
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid #ccc;
 } 
 
  
@@ -692,12 +699,61 @@ input:focus {
   display:inline-block;
   width:100px;
 } 
-
+.status_change li label{
+	padding-left:5px;
+}
  .status_change{
-	 
- }
+	 position: relative;
+	}
   .group{
-	  
-  }
+	  position: absolute;
+	  background: #fff;
+	  padding: 10px;
+	  width: 230px;
+	  box-shadow: 1px 1px 3px 2px #ddd;
+	  border-radius: 4px;
+	  left: 40px;
+	  top: 8px;
+	  z-index: 1;
+	 }
+.stage_title{
+	color: #0168fa;
+}
+.status_btn{
+	float:right;
+	margin-top: 20px;
+}
+ .status_remove{
+    padding: 0 10px;
+    color: #aaa;
+}
+ .status_apply{
+    color: #0879ff;
+}
+.stage_date{
+	padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    margin: -10px;
+}
+.show_stage + .status_change{
+	display:block !important;
+}
 
+
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  left: 50px;
+  z-index: 10;
+  position: absolute;
+  top: 0px;
+}
 /*Status Chanage*/
+
+.lead_details_container table.dataTable tbody td.sorting_1{
+	background-color: #f7fbff !important;
+}
