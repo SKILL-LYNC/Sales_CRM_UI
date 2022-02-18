@@ -671,3 +671,33 @@ input:focus {
 .dataTables_filter{
 	float: left !important;
 }
+
+
+
+/*Status Chanage*/
+ 
+
+ 
+
+
+.lead_details_container table ul.radio_btn  { 
+  
+  padding: 0;  
+  list-style: none; 
+} 
+
+ 
+
+.lead_details_container table ul.radio_btn li {  
+  display:inline-block;
+  width:100px;
+} 
+
+ .status_change{
+	 
+ }
+  .group{
+	  
+  }
+
+/*Status Chanage*/

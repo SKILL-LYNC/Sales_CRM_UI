@@ -197,24 +197,7 @@
                     <td>327613</td>
                     <td>Lesslie Alexander</td>
                     <td>lesslie.alexander@example.com</td>
-                    <td>
-						<span>Oppurtinity</span>
-						<div class="status_change"> 
-							<div class="group"> 
-								
-								<ul class="radio_btn"> 
-								  <li><input type="radio" id="cb1" value="New" name="status" /><label for="cb1">New</label></li> 
-								  <li><input type="radio" id="cb2" value="Dead" name="status"/><label for="cb2">Dead</label></li> 
-								  <li><input type="radio" id="cb3" value="Opportunity" name="status"/><label for="cb3">Opportunity</label></li> 
-								  <li><input type="radio" id="cb4" value="Closed Lost" name="status"/><label for="cb4">Closed Lost</label></li> 
-								  <li><input type="radio" id="cb5" value="Discovery" name="status"/><label for="cb5">Discovery</label></li> 
-								  <li><input type="radio" id="cb6" value="Closed Won" name="status"/><label for="cb6">Closed Won</label></li> 
-								  <li><input type="radio" id="cb7" value="Prospect" name="status"/><label for="cb7">Prospect</label></li> 
-								  <li><input type="radio" id="cb8" value="No Idea" name="status"/><label for="cb8">No Idea</label></li> 
-								</ul> 
-							</div> 
-						</div>
-					</td>
+                    <td><span>Oppurtinity</span></td>
                     <td>22 Feb, 13:00 hrs</td>
                     <td>Subramanya Samynathan</td>
                     <td>Sent Email</td>
@@ -1655,84 +1638,17 @@
        
 			 </div>
              <div class="col-md-3 col-sm-3 bg_white right_conainer">
-                <div class="row pd-y-10">
-                   <div class="col-6 d-flex align-items-center">
-                      <h5 class="mg-b-0">Performance</h5>
-                   </div>
-                   <div class="col-6">
-                      <select class="custom-select">
-                         <option>Monthly</option>
-                         <option>Weekly</option>
-                         <option>Yearly</option>
-                      </select>
-                   </div>
-                </div>
-                <div class="card bg_gradient">
-                   <div class="card-body pd-10">
-                      <div class="d-flex justify-content-between">
-                         <h5 class="d-flex align-items-center tx-white mg-b-0 tx-14">Total Revenue</h5>
-                         <span class="tx-right tx-white tx-12">#Team Ranking</span>
-                      </div>
-                      <div class="d-flex justify-content-between">
-                         <h3 class="d-flex align-items-center tx-white mg-b-0 tx-22-f">INR 16,50,000</h3>
-                         <div class="bd bd-success tx-right-f pd-x-10-f d-flex align-items-center justify-content-end tx-12-f team_ranking wd-70">1</div>
-                      </div>
-                      <h6 class="tx-white pd-y-10"><span class="tx-success"><i class="fa fa-caret-up tx-success mg-r-7"></i>+10.00%</span> since last month</h6>
-                      <div class="progress mg-b-10 ht-7">
-                         <div class="progress-bar bg-success wd-100p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <h6 class="tx-white tx-right mg-b-0"><span class="tx-success">120% </span>of Target: INR 24,00,000</h6>
-                   </div>
-                </div>
-                <div class="tx-right mg-y-10">
-                   <span class="tx-12">#Team Ranking</span>
-                </div>
-                <div class="row pd-y-5">
-                   <div class="col-5 d-flex align-items-center tx-primary tx-12 tx-bold text-nowrap">Calls Attempted</div>
-                   <div class="col-4 d-flex align-items-center justify-content-end txt_14">481 calls</div>
-                   <div class="col-3">
-                      <div class="bd tx-right pd-3 status_green tx-12-f">54</div>
-                   </div>
-                </div>
-                <div class="row pd-y-5">
-                   <div class="col-5 d-flex align-items-center tx-primary tx-12 tx-bold text-nowrap">Outgoing calls</div>
-                   <div class="col-4 d-flex align-items-center justify-content-end txt_14">1228 mins</div>
-                   <div class="col-3">
-                      <div class="bd tx-right pd-3 status_green tx-12-f">54</div>
-                   </div>
-                </div>
-                <div class="row pd-y-5">
-                   <div class="col-5 d-flex align-items-center tx-primary tx-12 tx-bold text-nowrap">Total Opportunity</div>
-                   <div class="col-4 d-flex align-items-center justify-content-end txt_14 tx-nowrap">INR 35,00,000</div>
-                   <div class="col-3">
-                      <div class="bd tx-right pd-3 status_red  tx-12-f">900</div>
-                   </div>
-                </div>
-                <div class="row pd-y-5">
-                 <div class="col-5 d-flex align-items-center tx-primary tx-12 tx-bold text-nowrap">Sales Plan Created for</div>
-                 <div class="col-4 d-flex align-items-center justify-content-end txt_14">INR 24,00,000</div>
-                 <div class="col-3">
-                    <div class="bd tx-right pd-3 status_green tx-12-f">64</div>
-                 </div>
+               <div class=" pd-y-15">
+                 <button class="btn blue_btn bg_green tx-white w-100 mg-b-15 tx-left tx-14 tx-bold" data-toggle="modal" data-target="#start_autodial"><i class="fa fa-phone mg-r-10" aria-hidden="true"></i>Start Auto Dial</button>
+                 <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-14 tx-bold" data-toggle="modal" data-target="#autodial_setting"><i class="fa fa-cog mg-r-10" aria-hidden="true"></i>Auto Dial Settings</button>
+               </div>
+               <hr>
+               <div class=" pd-y-15">
+                <button class="btn blue_btn bg_green tx-white w-100 mg-b-15 tx-left tx-14 tx-bold" data-toggle="modal" data-target="#resume_autodial"><i class="fa fa-phone mg-r-10" aria-hidden="true"></i>Resume Auto Dial</button>
+                <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-14 tx-bold" data-toggle="modal" data-target="#autodial_end"><i class="fa fa-phone mg-r-10" aria-hidden="true"></i>Call end</button>
               </div>
-                <hr>
-                 <!--<div>
-                   <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-16"><i class="fa fa-whatsapp mg-r-10"></i>Open Whatsapp <span class="tx-10">in a new tab </span></button>
-                   <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-16"><i class="fa fa-envelope-o mg-r-10"></i>Send Email</button>
-                   <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-16"><i class="fa fa-cube mg-r-10"></i>Schedule a Demo</button>
-                </div> -->
-            
-                <div>
-                 <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-16"><i class="fa fa-th mg-r-10" aria-hidden="true"></i>My Autodial List</button>
-                 <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-16"><i class="fa fa-envelope-square mg-r-10" aria-hidden="true"></i>My Mail Templates</button>
-               </div>
-            
-               <div>
-                 <button class="btn blue_btn bg_green tx-white w-100 mg-b-15 tx-left tx-16"><i class="fa fa-phone mg-r-10" aria-hidden="true"></i>Start Auto Dial</button>
-                 <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-16" data-toggle="modal" data-target="#autodial_setting"><i class="fa fa-cog mg-r-10" aria-hidden="true"></i>Auto Dial Settings</button>
-               </div>
-                
-             </div>
+              <hr>
+            </div>
          </div>
       </div>
       <footer style="display:none !important">
@@ -1753,7 +1669,39 @@
          </div>
          <!-- JS -->
       </footer>
+    
+    <div class="modal fade select-modal-parent show" id="start_autodial" tabindex="-1" role="dialog" aria-labelledby="start_autodial">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-transparent tx-center">
+              <div class="modal-body">
+                    <i class="fa fa-phone-square fa-4x txt_green pd-15" aria-hidden="true"></i>
+                    <h5 class="tx-white">Connecting Auto Dial...</h5>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="modal fade select-modal-parent show" id="resume_autodial" tabindex="-1" role="dialog" aria-labelledby="resume_autodial">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-transparent tx-center">
+              <div class="modal-body">
+                    <i class="fa fa-pause-circle fa-4x txt_green pd-15" aria-hidden="true"></i>
+                    <h5 class="tx-white">Autodial Paused...</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade select-modal-parent show" id="autodial_end" tabindex="-1" role="dialog" aria-labelledby="autodial_end">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-transparent tx-center">
+              <div class="modal-body">
+                    <i class="fa fa-check-circle fa-4x txt_green pd-15" aria-hidden="true"></i>
+                    <h5 class="tx-white">Autodial Complete...</h5>
+                </div>
+            </div>
+        </div>
+    </div>
 
       <div class="modal fade select-modal-parent show" id="autodial_setting" tabindex="-1" role="dialog" aria-labelledby="autodial_setting" >
         <div class="modal-dialog modal-dialog-centered" role="document">
