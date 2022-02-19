@@ -1,0 +1,357 @@
+<?php
+   defined('BASEPATH') OR exit('No direct script access allowed');
+   ?><!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Meta links-->
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1" name="viewport">
+      <meta name="keywords" content="Skill-Lync CRM, CRM Dashboard, CRM">
+      <meta name="description" content="Skill-Lync CRM Admistrator Dashboard Page">
+      <meta name="author" content="Skill-Lync">
+      <meta name="robot" content="index, follow">
+      <!-- Title -->
+      <title>Lead - Home </title>
+      <!-- CSS -->
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/select2.min.css">
+      <link rel="stylesheet" href="css/ionicons.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="css/fullcalendar.min.css" rel="stylesheet">
+      <link href="css/quill.snow.css" rel="stylesheet">
+      <link href="css/spectrum.css" rel="stylesheet">
+      <!-- DashForge CSS -->
+      <link rel="stylesheet" href="css/dashforge.css">
+      <link rel="stylesheet" href="css/sales_crm.css">
+      <link rel="stylesheet" href="css/bootstrap-clockpicker.css">
+      <link rel="stylesheet" href="css/responsive.dataTables.min.css">
+	  <style>
+		   .lead_txt_clr > p >label
+		   {
+			    color: #1f74fa;
+		   }
+	  </style>
+   </head>
+   <body>
+		
+		<header>
+			  <nav class="navbar navbar-header navbar-expand-lg d-none-lg justify-content-between bg-gray-100 ">
+				 <div class="navbar-brand">
+					<a class=""><img src="images/crm/footer_logo.png" class="wd-auto ht-20" id="" alt="logo"></a>
+				 </div>
+				 <!-- navbar-brand -->
+				 <div class="navbar-menu-wrapper justify-content-end pd-r-0" id="navbar-content">
+					<div class="nav navbar-menu bd-r hide-nav" id="navbar-menu">
+					   <div class="nav-item with-sub sub-menu">
+						  <a class="nav-link drop-icon" href="#" role="button"> Dashboard</a>
+						  <div class="navbar-menu-sub sub-drop">
+							 <div class="nav-sub-item d-flex justify-content-between align-items-center ">
+								<a href="#" class="nav-sub-link mg-r-10" id="admin">Administrator Dashboard</a>
+								<div class="d-flex">
+								   <a href="#" class="tx-dark mg-r-10"><i class="fa fa-pencil"></i></a>
+								   <a href="#" class="tx-dark"><i class="fa fa-check-circle"></i></a>
+								</div>
+							 </div>
+							 <div class="mg-b-0 pd-l-5-f pd-10 tx-gray-700 tx-12">MY DASHBOARDS</div>
+							 <div class="nav-sub-item d-flex justify-content-between align-items-center">
+								<a href="#" class="nav-sub-link" id="admin">Custom sales activity</a>
+								<div class="d-flex">
+								   <a href="#" class="tx-dark mg-r-10"><i class="fa fa-pencil"></i></a>
+								   <a><i class="fa fa-trash-o"></i></a>
+								</div>
+							 </div>
+							 <div class="nav-sub-item">
+								<a href="#" class="nav-sub-link"><i class="fa fa-plus mg-r-5"></i> Create New Dashboard</a>
+							 </div>
+						  </div>
+					   </div>
+					   <div class="nav-item with-sub sub-menu">
+						  <a href="" class="nav-link drop-icon">Content</a>
+						  <div class="navbar-menu-sub sub-drop">
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Email Library</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Images &#38; Documents</a></div>
+						  </div>
+					   </div>
+					   <div class="nav-item with-sub sub-menu">
+						  <a href="" class="nav-link drop-icon">Marketing</a>
+						  <div class="navbar-menu-sub  sub-drop">
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Email Campaigns</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Landing Pages</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Website Widgets</a></div>
+						  </div>
+					   </div>
+					   <div class="nav-item with-sub sub-menu">
+						  <a href="" class="nav-link drop-icon">Leads</a>
+						  <div class="navbar-menu-sub sub-drop">
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Smart Views</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Leads</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Activities</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Tasks</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Lists</a></div>
+						  </div>
+					   </div>
+					   <div class="nav-item with-sub sub-menu">
+						  <a href="" class="nav-link drop-icon">Workflow</a>
+						  <div class="navbar-menu-sub sub-drop">
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Automation</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Forms</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Process Designer</a></div>
+						  </div>
+					   </div>
+					   <div class="nav-item with-sub sub-menu">
+						  <a href="" class="nav-link drop-icon">Apps</a>
+						  <div class="navbar-menu-sub sub-drop">
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Apps</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Apps Marketplace</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Connect My Inbox</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Dashlet Builder</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Lead Marketplaces</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Adwords Data Sync</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Facebook Retargeting</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">WhatsApp Templates</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">WhatsApp Reports</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Kaleyra SMS Template</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">SMS Templates</a></div>
+						  </div>
+					   </div>
+					   <div class="nav-item with-sub sub-menu">
+						  <a href="" class="nav-link drop-icon">Reports</a>
+						  <div class="navbar-menu-sub sub-drop">
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Manage Apps</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Apps Marketplace</a></div>
+							 <div class="nav-sub-item"><a href="#" class="nav-sub-link">Connect My Inbox</a></div>
+						  </div>
+						  <!-- nav-sub -->
+					   </div>
+					</div>
+				 </div>
+				 <div class="navbar-right justify-content-end">
+					<div class="dropdown dropdown-profile mg-r-10 nav-right-menu">
+					   <a href="" class="dropdown-link nav-right-icon" data-toggle="dropdown" data-display="static">
+						  <img src="images/crm/search.png" class="wd-20 ht-20" alt="search">
+					   </a><!-- dropdown-link -->
+					   <div class="dropdown-menu dropdown-menu-right pd-15-f nav-right-drop">
+						  <div class="input-group">
+							 <input type="text" class="form-control" placeholder="Search Leads" aria-label="button-search-lead"
+								aria-describedby="button-search-lead">
+							 <div class="input-group-append">
+								<button class="btn btn-light" type="button" id="button-search-lead"><i
+									  class="fa fa-search"></i></button>
+							 </div>
+						  </div>
+					   </div>
+					</div>
+					<div class="dropdown dropdown-profile mg-r-10 ">
+					   <a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
+						  <img src="images/crm/question.png" class="wd-20 ht-20" alt="question_Mark">
+					   </a><!-- dropdown-link -->
+					   <div class="dropdown-menu dropdown-menu-right pd-15-f">
+						  <a href="#" class="dropdown-item nav-right-item">Manage Apps</a>
+						  <a href="#" class="dropdown-item nav-right-item">Apps Marketplace</a>
+						  <a href="#" class="dropdown-item nav-right-item">Connect My Inbox</a>
+					   </div>
+					</div>
+					<div class="dropdown dropdown-profile">
+					   <a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
+						  <img src="images/crm/user.svg" class="img-fluid ht-25" alt="user">
+					   </a><!-- dropdown-link -->
+					   <div class="dropdown-menu dropdown-menu-right tx-13 pd-15-f">
+						  <a href="#" class="dropdown-item nav-right-item">Sarang V</a>
+						  <a href="#" class="dropdown-item tx-11 nav-right-item">sarang@skill-lync.com</a>
+						  <a href="#" class="dropdown-item nav-right-item">Skill Lync</a>
+						  <div class="dropdown-divider"></div>
+						  <a class="dropdown-item nav-right-item"><i class="fa fa-cogs mg-r-10"></i>Settings</a>
+						  <a href="#" class="dropdown-item nav-right-item"><i class="fa fa-user-plus mg-r-10"></i>Manage
+							 Users</a>
+						  <a href="#" class="dropdown-item nav-right-item"><i class="fa  fa-power-off mg-r-10"></i>Signout</a>
+					   </div>
+					</div>
+					<!-- <div class="side-nav-btn"> -->
+					<!-- <i class="fa fa-bars"></i> -->
+					<!-- </div> -->
+				 </div>
+				 <!-- navbar-right -->
+			  </nav>
+			  <!-- navbar -->
+		</header>
+		   <!-- Navbar Header-->
+		
+		<section class="sal_crm_bg pd-15">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12 pd-l-20-f pd-y-10 ">
+					    <nav aria-label="breadcrumb bg-transparent-f">
+						    <ol class="breadcrumb breadcrumb-style2 mg-b-0">
+								<li class="breadcrumb-item"><a href="#">DASHBOARD</a></li>
+								<li class="breadcrumb-item"><a href="#">SALES DEMO SCHEDULER</a></li>
+								<li class="breadcrumb-item active" aria-current="page">MASTER'S CERTIFICATION PROGRAM IN DATA SCIENCE AND MACHINE LEARNING</li>
+						    </ol>
+					    </nav>
+					</div>
+				</div>
+				<div>
+					<h5>Master's certification program in data science and machine learning</h5>
+					<h6>Session Information</h6>
+					<div class="bd">
+                        <div class="row lead_txt_clr tx-12">
+                           <p class="row col-md-6">
+                              <label class="col-3">Lead Name</label>
+                              <span class="col-9">: Vivekanad Karpe</span>
+                           </p>
+                           <p class="row col-md-6">
+                              <label class="col-3">Lead Email</label>
+                               <span class="col-9">: vivekarpe@gmail.com</span>
+                           </p>
+						   <p class="row col-md-6">
+                              <label class="col-3">Lead Phone</label>
+                               <span class="col-9">: +91 9380304282</span>
+                           </p>
+                           <p class="row col-md-6">
+                              <label class="col-3">Online/Offline</label>
+                               <span class="col-9">: Online</span>
+                           </p>
+						    <p class="row col-md-6">
+                              <label class="col-3">Is Career Counselling</label>
+                               <span class="col-9">: Yes</span>
+                           </p>
+                           <p class="row col-md-6">
+                              <label class="col-3">Course Price(Conveyed to Customer)</label>
+                               <span class="col-9">: 250000</span>
+                           </p>
+						   <p class="row col-md-6">
+                              <label class="col-3">Purpose of the demo</label>
+                               <span class="col-9">:  Career Guidance</span>
+                           </p>
+                           <p class="row col-md-6">
+                              <label class="col-3">Customer Profile</label>
+                               <span class="col-9">: Working</span>
+                           </p>
+						   <p class="row col-md-6">
+                              <label class="col-3">Language</label>
+                               <span class="col-9">: English</span>
+                           </p>
+                           <p class="row col-md-6">
+                              <label class="col-3">Experience Level for this Lead</label>
+                               <span class="col-9">: Moderate</span>
+                           </p>
+						   <p class="row col-md-6">
+                              <label class="col-3">Course Name</label>
+							   <span class="col-9">: Vivekanad Karpe
+								<a href="#" class="btn btn-primary btn-xs tx-8 mg-x-10">View Course Page</a>
+							   </span>
+                           </p>
+                        </div>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="col-8 pd-t-40">
+						<div class="bd" id="response_display" style="display:flex;justify-content:center;align-items:center;">
+								<div class="pd-l-100 pd-r-100" style="text-align: center;">
+									<img src="https://portal-local.skill-lync.com/images/logo.png" class="pd-t-40 pd-b-40" style="width: 50%;height:auto;" alt="Skill Demo">
+									<button class="btn btn-xs btn-primary tx-center wd-100p mg-b-20" id="dyte_join_meeting" data-id="response_display"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video wd-15 mg-r-10"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg> Start demo</button>
+								</div>
+						</div>
+						<div id="dyte_meeting"></div>
+					</div>
+					<div class="col-4">
+						<div class="pd-y-10">
+							<h5>Feedback</h5>
+							<div class="pd-b-40">
+								<form class="bd bd-gray-300 rounded pd-30 bg-white">
+									<h6>Overall Comment for Vivekanad Karpe | vivekarpe@gmail.com</h6>
+									<p>How satisfied were you overall with your interaction with customer?</p>
+									
+									<div class="custom-control custom-radio pd-y-10">
+										<input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_1">
+										<label class="custom-control-label" for="cust_radio_1">Very Satisfied</label>
+									</div>
+									<div class="custom-control custom-radio pd-y-10">
+										<input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_2">
+										<label class="custom-control-label" for="cust_radio_2">Satisfied</label>
+									</div>
+									<div class="custom-control custom-radio pd-y-10">
+										<input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_3">
+										<label class="custom-control-label" for="cust_radio_3">Neither Satisfied nor Dissatisfied</label>
+									</div>
+									<div class="custom-control custom-radio pd-y-10">
+										<input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_4">
+										<label class="custom-control-label" for="cust_radio_4">Dissatisfied</label>
+									</div>
+									<div class="custom-control custom-radio pd-y-10">
+										<input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_5">
+										<label class="custom-control-label" for="cust_radio_5">Very Dissatisfied</label>
+									</div>
+									
+									<div>
+										<textarea class="form-control" rows="5" placeholder="Textarea"></textarea>
+									</div>
+									<div>
+										<button class="btn btn-primary mg-y-10">Submit</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					
+					
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container-fluid bg-gray-100 fixed-bottom mg-t-20 d-none">
+				<div class="row row-xs">
+					<div class="col-md-12 pd-15">
+					    <ul class=" customer-li pd-l-0 mg-b-0 tx-10">
+						    <li class="d-inline">
+								<a href="#" class="tx-dark footer-a" id="">&#169; 2022 Skill Lync Inc. All Rights Reserved</a>
+						    </li>
+					    </ul>
+					</div>
+				</div>
+			</div>
+		  <!-- JS -->
+	    </footer>
+		
+		
+		
+		
+      <script src="js/jquery.min.js"></script>
+      <script src="js/common.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+      <script src="js/select2.min.js"></script>
+      <script src="js/jquery-clockpicker.min.js"></script>
+      <script src="js/feather.min.js"></script>
+      <script src="js/quill.js"></script>
+      <script src="js/typeahead.jquery.min.js"></script>
+      <script src="js/spectrum.js"></script>
+      <script src="js/dashforge.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery.steps.min.js"></script>
+      <script src="js/jquery-clockpicker.min.js"></script>
+	  <script src="js/responsive.dataTables.min.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	  
+	 
+	    
+    
+       <script>
+        
+        $('.select_search').select2();
+	  
+	    $('.slot_date').datepicker();
+	  
+	  
+	    $('.clockpicker').clockpicker({
+			placement: 'top',
+			align: 'left',
+			donetext: 'Done'
+		});
+      </script>
+   </body>
+</html>
+
+
+
+
+ 
