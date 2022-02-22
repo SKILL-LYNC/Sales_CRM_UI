@@ -2,20 +2,38 @@
 {
   overflow-y: auto;
   display: block;
-  height: 405px;
+  height: 380px;
 }
 
 
 .custom_modal{
-  padding: 10px 15px;
+  padding: 0 20px !important;
+}
+
+.schedule_demo_header
+{
+	padding:15px 20px !important;
+}
+
+.ht335
+{
+	height:335px !important;
+}
+
+.custom_footer{
+  padding: 0 20px 15px 0 !important;
+}
+.custom_modal .info_data{
+  font-size: 14px;
+  color: #3e3e3e;
 }
 .custom_modal input{
   height:30px;
 }
 .custom_modal label{
-  font-size:12px;
+  font-size:14px;
   color:#0168fa;
-  font-weight:400;
+  font-weight:500;
 }
 .btn_width button
 {
@@ -47,11 +65,13 @@
   background: #e3e7ed;
   border: 0;
   font-size: 14px;
-  height: 30px;
+  height: 35px;
 }
 
 .custom_modal  .tab-content{
-  border:1px solid #d6e6fe;
+  border: 1px solid #d4e6ff;
+  background: #f2f7ff;
+  border-radius: 4px;
 }
 .calendar, .calendar_weekdays, .calendar_content {
   max-width: 450px; }
@@ -61,7 +81,7 @@
   font-weight: 400; }
 
 .calendar_content {
-  background: #f2f7ff;
+  background: #ffffff;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   }
@@ -142,7 +162,7 @@
 .calendar_header {
   width: 100%;
   text-align: center;
-  background: #f2f7ff;
+  background: #ffffff;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   }
