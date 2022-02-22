@@ -4,9 +4,18 @@
     /* padding: 10px; */
 /* } */
  
+
+.sales_crm_sec{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height:87vh;
+    background: #f8faff;
+}
+
  .sales_tab_content{
-	 height:60vh;
-	 overflow:auto;
+	 height:55vh;
+	 overflow-x:hidden;
+     overflow-y: auto;
  }
 [type="checkbox"]:checked,
 [type="checkbox"]:not(:checked),
@@ -70,10 +79,10 @@
 .checkbox-tools:not(:checked) + label {
     position: relative;
     display: inline-block;
-    padding: 8px;
+    padding: 5px;
     min-width: 75px;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 15px;
     letter-spacing: 1px;
     margin: 0 auto;
     margin-left: 5px;
@@ -146,7 +155,7 @@
     background-color: rgb(228 241 255);
 }
 .nav-tabs.flex-column .nav-item + .nav-item{
-	margin-top:15px !important;
+	margin-top:17px !important;
 }
 .nav-tabs.flex-column{
 	border-right:0px !important;
@@ -155,7 +164,10 @@
     border-color: #e2e5ed;
 }
 .nav-tabs.flex-column .nav-item .nav-link{
-	    padding: 25px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
+
 }
 .nav-tabs .nav-link.active {
     z-index: 5;
@@ -224,5 +236,16 @@ color: #dc3545;
 }
 
 .alert-padd{
-    padding: 5px 10px;
+    padding: 2px 10px;
+}
+
+.bg-red-alert{
+    background: #F93A5C;
+}
+
+.gen_payment_link th{
+    padding: 8px 4px !important;
+}
+.gen_payment_link td {
+    padding: 8px 4px !important;
 }
