@@ -1,0 +1,614 @@
+<?php
+   defined('BASEPATH') OR exit('No direct script access allowed');
+   ?><!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Meta links-->
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1" name="viewport">
+      <meta name="keywords" content="Skill-Lync CRM, CRM Dashboard, CRM">
+      <meta name="description" content="Skill-Lync CRM Admistrator Dashboard Page">
+      <meta name="author" content="Skill-Lync">
+      <meta name="robot" content="index, follow">
+      <!-- Title -->
+      <title>Lead - Home </title>
+      <!-- CSS -->
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/select2.min.css">
+      <link rel="stylesheet" href="css/ionicons.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="css/fullcalendar.min.css" rel="stylesheet">
+      <link href="css/quill.snow.css" rel="stylesheet">
+      <link href="css/spectrum.css" rel="stylesheet">
+      <!-- DashForge CSS -->
+      <link rel="stylesheet" href="css/dashforge.css">
+      <link rel="stylesheet" href="css/sales_crm.css">
+      <link rel="stylesheet" href="css/bootstrap-clockpicker.css">
+      <link rel="stylesheet" href="css/responsive.dataTables.min.css">
+	  
+	  <!--jQuery js-->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+		<!--Google Fonts-->
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+
+		<!--Simple Cale Calender CSS-->
+		<link rel="stylesheet" href="css/simple-calendar.css">
+
+		<!--Simple Calender Js-->
+		<script src="js/jquery.simple-calendar.js"></script>
+		
+		
+	  <style>
+		.sal_crm_bg {
+			background: #f8faff;
+		}
+		.modal_scroll
+		{
+			overflow-y: auto;
+			display: block;
+			max-height: 380px;
+		}
+		.custom_modal input{
+			height:30px !important;
+		}
+		.custom_modal select{
+			height:30px  !important;
+		}
+		
+		.custom_modal .select2-selection--single{
+			height: calc(.9em + 1rem + 1px) !important;
+		}
+		.custom_modal label{
+			font-size:12px;
+			color:#146CC5;
+			font-weight:400;
+		}
+
+		.custom_modal .nav-tabs .nav-link.active {
+			color: #146CC5;
+		}
+
+		.custom_modal .nav-line .nav-link.active::after {
+    		height: 3px;
+			color: #146CC5;
+		}
+
+		.custom_modal .nav-line .nav-link {
+    		padding: 8px 15px;
+		}
+		.custom_modal_button{
+			padding: 4px 20px !important;
+    		font-size: 12px;
+		}
+
+		.custom_modal .form-control {
+    		height: calc(1rem + 1rem + 1px);
+		}
+
+		.custom_modal .form-group {
+    		margin-bottom: 15px;
+        }
+
+		.custom_modal .select2-container--open {
+    		font-size: 11px !important;
+		}
+
+		.custom_modal .select2-results__option {
+   			 font-size: 11px !important;
+		}
+
+		.custom_modal  .select2-container--default .select2-results > .select2-results__options {
+				margin: 3px;
+				font-size: 11px !important;
+		}
+		
+		
+				
+		ul {list-style-type: none;}
+		body {font-family: Verdana, sans-serif;}
+
+		/* Month header */
+		.month {
+		  padding: 10px;
+		  width: 100%;
+		  background: #146CC5;
+		  text-align: center;
+		}
+
+		/* Month list */
+		.month ul {
+		  margin: 0;
+		  padding: 0;
+		}
+
+		.month ul li {
+		  color: white;
+		  font-size: 20px;
+		  text-transform: uppercase;
+		  letter-spacing: 3px;
+		}
+
+		/* Previous button inside month header */
+		.month .prev {
+		  float: left;
+		  padding-top: 10px;
+		}
+
+		/* Next button */
+		.month .next {
+		  float: right;
+		  padding-top: 10px;
+		}
+
+		/* Weekdays (Mon-Sun) */
+		.weekdays {
+		  margin: 0;
+		  padding: 10px 0;
+		  background-color:#ddd;
+		}
+
+		.weekdays li {
+		  display: inline-block;
+		  width: 12.6%;
+		  color: #666;
+		  text-align: center;
+		}
+
+		/* Days (1-31) */
+		.days {
+		  padding: 10px 0;
+		  background: #eee;
+		  margin: 0;
+		}
+
+		.days li {
+		  list-style-type: none;
+		  display: inline-block;
+		  width: 12.6%;
+		  text-align: center;
+		  margin-bottom: 5px;
+		  font-size:12px;
+		  color: #777;
+		}
+
+		/* Highlight the "current" day */
+		.days li .active {
+		  padding: 5px;
+		  background: #146CC5;
+		  color: white !important
+		}
+		
+
+		#sessioncalendar thead tr th.disabled{
+				visibility:visible !important;
+				color:#1976D2 !important;
+			}
+			#sessionslots{
+				position:relative;
+				width:100%;
+				min-height: 200px;
+			}
+			.session_slot_loading{
+				position:absolute;
+				background:#fff;
+				opacity:.5;
+				top:0px;
+				width:100%;
+				height:100%;
+			} 
+
+#sessioncalendar .datepicker {
+    background-color: #fff;
+    border-radius: 0 !important;
+    align-content: center !important;
+    padding: 0 !important;
+	width:100% !important;
+}
+
+#sessioncalendar .datepicker-dropdown {
+    top: 180px !important;
+    left: calc(50% - 173.5px) !important;
+    border-right: #1976D2;
+    border-left: #1976D2
+}
+
+#sessioncalendar .datepicker-dropdown.datepicker-orient-left:before {
+    left: calc(50% - 6px) !important
+}
+
+#sessioncalendar .datepicker-dropdown.datepicker-orient-left:after {
+    left: calc(50% - 5px) !important;
+    border-bottom-color: #1976D2
+}
+
+#sessioncalendar .datepicker-dropdown.datepicker-orient-right:after {
+    border-bottom-color: #1976D2
+}
+
+#sessioncalendar .datepicker table tr td.today,
+span.focused {
+    border-radius: 50% !important;
+    background-image: linear-gradient(#FFF3E0, #FFE0B2)
+}
+
+#sessioncalendar thead tr:nth-child(2) {
+    background-color: #1976D2 !important
+}
+
+#sessioncalendar thead tr:nth-child(3) th {
+    font-weight: bold !important;
+    padding: 20px 10px !important;
+    color: #BDBDBD !important
+}
+
+#sessioncalendar tbody tr td {
+    padding: 10px !important
+}
+
+#sessioncalendar tfoot tr:nth-child(2) th {
+    padding: 10px !important;
+    border-top: 1px solid #CFD8DC !important
+}
+
+#sessioncalendar .cw {
+    font-size: 14px !important;
+    background-color: #E8EAF6 !important;
+    border-radius: 0px !important;
+    padding: 0px 20px !important;
+    margin-right: 10px solid #fff !important
+}
+
+#sessioncalendar .old,
+#sessioncalendar .day,
+#sessioncalendar .new {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 0px !important
+}
+
+#sessioncalendar .day.old,
+#sessioncalendar .day.new {
+    color: #E0E0E0 !important
+}
+
+#sessioncalendar .day.old:hover,
+#sessioncalendar .day.new:hover {
+    border-radius: 50% !important
+}
+
+#sessioncalendar .old-day:hover,
+#sessioncalendar .day:hover,
+#sessioncalendar .new-day:hover,
+#sessioncalendar .month:hover,
+#sessioncalendar .year:hover,
+#sessioncalendar .decade:hover,
+#sessioncalendar .century:hover {
+    border-radius: 50% !important;
+    background-color: #eee
+}
+
+#sessioncalendar .active {
+    border-radius: 50% !important;
+    background-image: linear-gradient(#1976D2, #1976D2) !important;
+    color: #fff !important
+}
+
+#sessioncalendar .range-start,
+#sessioncalendar .range-end {
+    border-radius: 50% !important;
+    background-image: linear-gradient(#1976D2, #1976D2) !important
+}
+
+#sessioncalendar .range {
+    background-color: #E3F2FD !important
+}
+
+#sessioncalendar .prev,
+#sessioncalendar .next,
+#sessioncalendar .datepicker-switch {
+    border-radius: 0 !important;
+    padding: 10px 10px 10px 10px !important;
+    font-size: 18px;
+    opacity: 0.7;
+    color: #fff
+}
+
+#sessioncalendar .prev:hover,
+#sessioncalendar .next:hover,
+#sessioncalendar .datepicker-switch:hover {
+    background-color: inherit !important;
+    opacity: 1
+}
+
+@media screen and (max-width: 726px) {
+    #sessioncalendar .datepicker-dropdown.datepicker-orient-right:before {
+        right: calc(50% - 6px)
+    }
+
+    #sessioncalendar .datepicker-dropdown.datepicker-orient-right:after {
+        right: calc(50% - 5px)
+    }
+}
+
+.bootstrap-datetimepicker-widget{
+	padding-left:40px !important;
+	padding-right:40px !important;
+}
+		</style>
+
+	  </style>
+   </head>
+   <body>
+      
+      <!-- Navbar Header-->
+		
+			<div class="row">
+				<div class="col-md-3">
+				  
+				   
+					 <button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-14 tx-bold" data-toggle="modal" data-target="#schedule_a_demo"><i class="fa fa-cog mg-r-10" aria-hidden="true"></i>Form</button>
+				  </div>
+			</div>
+		  
+     
+    
+    
+
+      <div class="modal fade select-modal-parent show" id="schedule_a_demo" tabindex="-1" role="dialog" aria-labelledby="autodial_setting" >
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content sal_crm_bg">
+            
+                <div class="modal-header bd-b-0-f">
+                    <h5 class="modal-title" id="lead_details_box_edittitle">Schedule a Demo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+              
+                <div class="modal-body   custom_modal ">
+                    <div class="row">
+						<div class="col-6 modal_scroll">
+							<h6>Lead Details:</h6>
+							<form>
+								<div class="row tx-12"> 
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Lead Name</label>
+											<input type="text" class="form-control" required="">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Lead Email</label>
+											<input type="text" class="form-control" required="">
+										</div>
+									</div>
+								</div>
+								<div class="row"> 
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Lead Phone</label>
+											<div class="input-group form-group">
+												<div class="input-group-prepend" style="width:20%;">
+													<input type="hidden" name="country" id="country" value="11">
+													<select class="form-control custom-input country" name="country_code" required="" style="border-top-right-radius:0px; border-bottom-right-radius:0px;">
+														<option value="+93" data-country="1">Afghanistan (+93)</option>
+														<option value="+358" data-country="2">Aland Islands (+358)</option>
+													</select>
+												</div>
+												<input type="text" class="form-control" style="width:60%;" name="phone_number" id="phone_number" required="" autocomplete="off">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Lead State</label>
+											<select class="form-control select_search">
+												<option>Tamil Nadu</option>
+												<option>Andhdra</option>
+												<option>Karnataka</option>
+												<option>Kerala</option>
+										  </select>
+										</div>
+									</div>
+								</div>
+								<div class="row"> 
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Lead City</label>
+											<select class="form-control select_search">
+												<option>Chennai</option>
+												<option>Bangalore</option>
+												<option>Hydrabed</option>
+												<option>Pune</option>
+										  </select>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Language<span class="tx-danger">*</span></label>
+											<select class="form-control">
+												<option>Moderate</option>
+												<option>Low</option>
+												<option>High</option>
+										  </select>
+										</div>
+									</div>
+								</div>
+								<div class="row"> 
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Experience Level for this lead<span class="tx-danger">*</span></label>
+									<select class="form-control">
+										<option>Moderate</option>
+										<option>Low</option>
+										<option>High</option>
+								  </select>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Customer Profile</label>
+									<select class="form-control">
+										<option>Studying</option>
+										<option>Working</option>
+								  </select>
+								</div>
+							</div>
+						</div>
+								<h6>Course Details:</h6>
+								<div class="row"> 
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Course Name<span class="tx-danger"> *</span></label>
+											<select class="form-control">
+												<option>Online</option>
+												<option>Offline</option>
+										  </select>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Course Price<span class="tx-danger"> *</span></label>
+											<select class="form-control">
+												<option>Yes</option>
+												<option>No</option>
+												
+										  </select>
+										</div>
+									</div>
+								</div>
+								<div class="row"> 
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Sales Engineer Demo<span class="tx-danger"> *</span></label>
+											<select class="form-control">
+												<option>Online</option>
+												<option>Offline</option>
+										  </select>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Purpose of the demo<span class="tx-danger"> *</span></label>
+											<select class="form-control">
+												<option>Yes</option>
+												<option>No</option>
+												
+										  </select>
+										</div>
+									</div>
+								</div>
+								
+								<h6>Session Details:</h6>
+								<div class="row"> 
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Online  or Offline<span class="tx-danger"> *</span></label>
+											<select class="form-control">
+												<option>Online</option>
+												<option>Offline</option>
+										  </select>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Is the session is for career counselling?<span class="tx-danger"> *</span></label>
+											<select class="form-control">
+												<option>Yes</option>
+												<option>No</option>
+												
+										  </select>
+										</div>
+									</div>
+								</div>
+								<div class="row"> 
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Title<span class="tx-danger"> *</span></label>
+											<input type="text" class="form-control" required="">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Description</label>
+											<textarea class="form-control" rows="2"></textarea>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div>
+						
+						
+						</div>
+						<div class="col-lg-6">
+							<div id="datepicker1">
+
+							</div>
+						
+						</div>
+					
+				</div>
+				
+                <div class="modal-footer bd-0-f">
+                    <button type="button" class="btn btn-secondary custom_modal_button" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary custom_modal_button">Save</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/common.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+      <script src="js/select2.min.js"></script>
+      <script src="js/jquery-clockpicker.min.js"></script>
+      <script src="js/feather.min.js"></script>
+      <script src="js/quill.js"></script>
+      <script src="js/typeahead.jquery.min.js"></script>
+      <script src="js/spectrum.js"></script>
+      <script src="js/dashforge.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery.steps.min.js"></script>
+      <script src="js/jquery-clockpicker.min.js"></script>
+	  <script src="js/responsive.dataTables.min.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	  
+	 
+	    
+	  <script>
+
+		$( function() {
+		  $( "#datepicker1" ).datepicker();
+		} );
+
+		</script>
+
+       <script>
+        
+		
+        $('.select_search').select2();
+	  
+	      
+	    $('.clockpicker').clockpicker({
+			placement: 'top',
+			align: 'left',
+			donetext: 'Done'
+		});
+		
+		
+
+		
+      </script>
+   </body>
+</html>
+
+
+
+
+ 

@@ -26,10 +26,88 @@
       <link rel="stylesheet" href="css/bootstrap-clockpicker.css">
       <link rel="stylesheet" href="css/responsive.dataTables.min.css">
 	  <style>
-		   .lead_txt_clr > p >label
+		   .lead_txt_clr label
 		   {
-			    color: #1f74fa;
+			    color: #383838;
+				font-weight: 600;
 		   }
+		   .lead_txt_clr a {
+				background: #0168fa;
+				color: #fff;
+				padding: 4px 8px;
+				font-family: 'Roboto';
+				font-weight: 500;
+				font-size: 12px;
+				border-radius: 5px;
+			}
+		   .session_info fieldset {
+				background: #fafbff;
+				border: 2px solid #d2e3ff;
+				border-radius: 5px;
+			}
+
+		   .session_info legend{
+			width:auto;
+			padding:0 10px
+		   } 
+		   .pic {
+    margin-top: 15px;
+    margin-bottom: 15px
+}
+		   
+.card-block {
+    width: 150px;
+    border: 1px solid lightgrey;
+    border-radius: 5px !important;
+    background-color: #FAFAFA;
+    margin-bottom: 30px
+}
+
+.card-body.show {
+    display: block
+}
+
+.card {
+    padding-bottom: 20px;
+    box-shadow: 2px 2px 6px 0px rgb(200, 167, 216)
+}
+
+.radio {
+    display: inline-block;
+    border-radius: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #000;
+    font-weight: 500;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%)
+}
+
+.radio:hover {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1)
+}
+
+.radio.selected {
+    box-shadow: 0px 8px 16px 0px #EEEEEE;
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    filter: grayscale(0%)
+}
+
+.selected {
+    background-color: #E0F2F1
+}
+
+.a {
+    justify-content: center !important
+}
+
+
 	  </style>
    </head>
    <body>
@@ -176,7 +254,7 @@
 		</header>
 		   <!-- Navbar Header-->
 		
-		<section class="sal_crm_bg pd-15">
+		<section class="pd-15">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12 pd-l-20-f pd-y-10 ">
@@ -191,103 +269,180 @@
 				</div>
 				<div>
 					<h5>Master's certification program in data science and machine learning</h5>
-					<h6>Session Information</h6>
-					<div class="bd">
-                        <div class="row lead_txt_clr tx-12">
-                           <p class="row col-md-6">
-                              <label class="col-3">Lead Name</label>
-                              <span class="col-9">: Vivekanad Karpe</span>
-                           </p>
-                           <p class="row col-md-6">
-                              <label class="col-3">Lead Email</label>
-                               <span class="col-9">: vivekarpe@gmail.com</span>
-                           </p>
-						   <p class="row col-md-6">
-                              <label class="col-3">Lead Phone</label>
-                               <span class="col-9">: +91 9380304282</span>
-                           </p>
-                           <p class="row col-md-6">
-                              <label class="col-3">Online/Offline</label>
-                               <span class="col-9">: Online</span>
-                           </p>
-						    <p class="row col-md-6">
-                              <label class="col-3">Is Career Counselling</label>
-                               <span class="col-9">: Yes</span>
-                           </p>
-                           <p class="row col-md-6">
-                              <label class="col-3">Course Price(Conveyed to Customer)</label>
-                               <span class="col-9">: 250000</span>
-                           </p>
-						   <p class="row col-md-6">
-                              <label class="col-3">Purpose of the demo</label>
-                               <span class="col-9">:  Career Guidance</span>
-                           </p>
-                           <p class="row col-md-6">
-                              <label class="col-3">Customer Profile</label>
-                               <span class="col-9">: Working</span>
-                           </p>
-						   <p class="row col-md-6">
-                              <label class="col-3">Language</label>
-                               <span class="col-9">: English</span>
-                           </p>
-                           <p class="row col-md-6">
-                              <label class="col-3">Experience Level for this Lead</label>
-                               <span class="col-9">: Moderate</span>
-                           </p>
-						   <p class="row col-md-6">
-                              <label class="col-3">Course Name</label>
-							   <span class="col-9">: Vivekanad Karpe
-								<a href="#" class="btn btn-primary btn-xs tx-8 mg-x-10">View Course Page</a>
-							   </span>
-                           </p>
-                        </div>
-                    </div>
+				
+					
 				</div>
 				<div class="row">
-					<div class="col-8 pd-t-40">
-						<div class="bd" id="response_display" style="display:flex;justify-content:center;align-items:center;">
-								<div class="pd-l-100 pd-r-100" style="text-align: center;">
-									<img src="https://portal-local.skill-lync.com/images/logo.png" class="pd-t-40 pd-b-40" style="width: 50%;height:auto;" alt="Skill Demo">
-									<button class="btn btn-xs btn-primary tx-center wd-100p mg-b-20" id="dyte_join_meeting" data-id="response_display"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video wd-15 mg-r-10"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg> Start demo</button>
+					<div class="col-md-8 session_info">
+						<fieldset>
+							<legend>Session Information</legend>
+							<div class="row lead_txt_clr tx-14">
+							   <div class="col-md-6">
+								  <label class="col-6">Lead Name</label>
+								  <span class="col-6">: Vivekanad Karpe</span>
+							   </div>
+							   <div class="col-md-6">
+								  <label class="col-6">Lead Email</label>
+								   <span class="col-6">: vivekarpe@gmail.com</span>
+							   </div>
+							</div>
+							   <div class="row lead_txt_clr tx-14">
+							   <div class="col-md-6">
+								  <label class="col-6">Lead Phone</label>
+								   <span class="col-6">: +91 9380304282</span>
+							   </div>
+							   <div class="col-md-6">
+								  <label class="col-6">Online/Offline</label>
+								   <span class="col-6">: Online</span>
+							   </div>
 								</div>
+								<div class="row lead_txt_clr tx-14">
+									<div class="col-md-6">
+								  	<label class="col-6">Is Career Counselling</label>
+								   <span class="col-6">: Yes</span>
+							   		</div>
+							   <div class="col-md-6">
+								  <label class="col-6">Course Price (Conveyed to Customer)</label>
+								   <span class="col-6">: 250000</span>
+							   </div>
+							   </div>
+
+							   <div class="row lead_txt_clr tx-14">
+								<div class="col-md-6">
+								  <label class="col-6">Purpose of the demo</label>
+								   <span class="col-6">:  Career Guidance</span>
+							   </div>
+							   <div class="col-md-6">
+								  <label class="col-6">Customer Profile</label>
+								   <span class="col-6">: Working</span>
+							   </div>
+							   </div>
+							   <div class="row lead_txt_clr tx-14">
+								<div class="col-md-6">
+								  <label class="col-6">Language</label>
+								   <span class="col-6">: English</span>
+							   </div>
+							   <div class="col-md-6 lead_txt_clr tx-14">
+								  <label class="col-6">Experience Level for this Lead</label>
+								   <span class="col-6">: Moderate</span>
+							   </div>
+							   </div>
+							   <div class="row lead_txt_clr tx-14">
+								<div class="col-md-6">
+								  <label class="col-6">Course Name</label>
+								   <span class="col-6">: Vivekanad Karpe </span>
+							   </div>
+							   <div class="col-md-6 lead_txt_clr pd-x-30">
+								<a href="#">
+								   <i class="fa fa-eye" aria-hidden="true"> Course Details</i></a>
+								</div>
+							   </div>
+							</fieldset>
 						</div>
-						<div id="dyte_meeting"></div>
+				
+					<div class="col-md-4 pd-15">
+						<div class="bd" id="response_display" >
+							<div class="pd-15">
+								<!-- <img src="https://portal-local.skill-lync.com/images/logo.png" class="pd-t-40 pd-b-40" style="width: 50%;height:auto;" alt="Skill Demo"> -->
+								
+							
+								<img src="./images/demo-video.svg" class="pd-b-15" style="width:100%; height:auto;" alt="Skill Demo">
+								<button class="btn btn-primary tx-center wd-30p float-right" id="dyte_join_meeting" data-id="response_display"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video wd-15 mg-r-10"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg> Start demo</button>
+							</div>
 					</div>
-					<div class="col-4">
+					<div id="dyte_meeting"></div>
+					</div>
+				</div>
+			
+				
+				<div class="row">
+					
+					<div class="col-12">
 						<div class="pd-y-10">
+							
 							<h5>Feedback</h5>
-							<div class="pd-b-40">
-								<form class="bd bd-gray-300 rounded pd-30 bg-white">
+							<div class="pd-b-10">
+								<form class="bd bd-gray-300 rounded pd-15-f bg-white">
 									<h6>Overall Comment for Vivekanad Karpe | vivekarpe@gmail.com</h6>
 									<p>How satisfied were you overall with your interaction with customer?</p>
 									
-									<div class="custom-control custom-radio pd-y-10">
-										<input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_1">
-										<label class="custom-control-label" for="cust_radio_1">Very Satisfied</label>
-									</div>
-									<div class="custom-control custom-radio pd-y-10">
-										<input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_2">
-										<label class="custom-control-label" for="cust_radio_2">Satisfied</label>
-									</div>
-									<div class="custom-control custom-radio pd-y-10">
-										<input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_3">
-										<label class="custom-control-label" for="cust_radio_3">Neither Satisfied nor Dissatisfied</label>
-									</div>
-									<div class="custom-control custom-radio pd-y-10">
-										<input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_4">
-										<label class="custom-control-label" for="cust_radio_4">Dissatisfied</label>
-									</div>
-									<div class="custom-control custom-radio pd-y-10">
-										<input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_5">
-										<label class="custom-control-label" for="cust_radio_5">Very Dissatisfied</label>
+									<!-- <div class="custom-control custom-radio pd-y-10"> -->
+										<!-- <input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_1"> -->
+										<!-- <label class="custom-control-label" for="cust_radio_1">Very Satisfied</label> -->
+									<!-- </div> -->
+									<!-- <div class="custom-control custom-radio pd-y-10"> -->
+										<!-- <input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_2"> -->
+										<!-- <label class="custom-control-label" for="cust_radio_2">Satisfied</label> -->
+									<!-- </div> -->
+									<!-- <div class="custom-control custom-radio pd-y-10"> -->
+										<!-- <input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_3"> -->
+										<!-- <label class="custom-control-label" for="cust_radio_3">Neither Satisfied nor Dissatisfied</label> -->
+									<!-- </div> -->
+									<!-- <div class="custom-control custom-radio pd-y-10"> -->
+										<!-- <input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_4"> -->
+										<!-- <label class="custom-control-label" for="cust_radio_4">Dissatisfied</label> -->
+									<!-- </div> -->
+									<!-- <div class="custom-control custom-radio pd-y-10"> -->
+										<!-- <input type="radio" name="customRadio" class="custom-control-input" id="cust_radio_5"> -->
+										<!-- <label class="custom-control-label" for="cust_radio_5">Very Dissatisfied</label> -->
+									<!-- </div> -->
+									
+									<div class="radio-group row  px-3 text-center">
+									
+										<div class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio selected ">
+											<div class="flex-row">
+												<div class="col">
+													<div class="pic"> <img class="irc_mut img-fluid" src="https://i.imgur.com/6r0XCez.png" width="30" height="30"> </div>
+													<p>Very Satisfied</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio">
+											<div class="flex-row">
+												<div class="col">
+													<div class="pic"> <img class="irc_mut img-fluid" src="https://i.imgur.com/6r0XCez.png" width="30" height="30"> </div>
+													<p>Satisfied</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio">
+											<div class="flex-row">
+												<div class="col">
+													<div class="pic"> <img class="irc_mut img-fluid" src="https://i.imgur.com/6r0XCez.png" width="30" height="30"> </div>
+													<p>Neither Satisfied Nor Dissatisfied</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio">
+											<div class="flex-row">
+												<div class="col">
+													<div class="pic"> <img class="irc_mut img-fluid" src="https://i.imgur.com/6r0XCez.png" width="30" height="30"> </div>
+													<p>Dissatisfied</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio">
+											<div class="flex-row">
+												<div class="col">
+													<div class="pic"> <img class="irc_mut img-fluid" src="https://i.imgur.com/6r0XCez.png" width="30" height="30"> </div>
+													<p>Very Dissatisfied</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-auto mr-sm-2 mx-1 py-0">
+											<textarea class="form-control" rows="5" cols="50" placeholder="Textarea"></textarea>
+											<button class="btn btn-primary mg-y-10 float-right">Submit</button>
+										</div>
 									</div>
 									
-									<div>
-										<textarea class="form-control" rows="5" placeholder="Textarea"></textarea>
-									</div>
-									<div>
-										<button class="btn btn-primary mg-y-10">Submit</button>
-									</div>
+									<!-- <div class="row"> -->
+										<!-- <div class="offset-8 col-md-4"> -->
+											<!-- <textarea class="form-control" rows="5" placeholder="Textarea"></textarea> -->
+											<!-- <button class="btn btn-primary mg-y-10 float-right">Submit</button> -->
+										<!-- </div> -->
+										
+									<!-- </div> -->
+									
 								</form>
 							</div>
 						</div>
@@ -295,6 +450,7 @@
 					
 					
 				</div>
+			</div>
 			</div>
 		</section>
 		<footer>
@@ -346,6 +502,14 @@
 			placement: 'top',
 			align: 'left',
 			donetext: 'Done'
+		});
+
+		$(document).ready(function () {
+			$('.radio-group .radio').click(function () {
+				$('.selected .fa').removeClass('fa-check');
+					$('.radio').removeClass('selected');
+				$(this).addClass('selected');
+			});
 		});
       </script>
    </body>
