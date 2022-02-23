@@ -4,13 +4,16 @@
 <title>jQuery UI Droppable</title>
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/start/jquery-ui.css"> 
 <style type="text/css">
+body{
+	margin:0;
+}
 #parentElement {
-    width: 500px;
-    height: 200px;
-    margin: 20px auto;
+    width: 100vw;
+    height: 100vh; 
     background: lightgray;
     position: relative;
     overflow:hidden;
+	
 }
 #dragElement {
     font-family: Tahoma, sans;
@@ -26,11 +29,12 @@ p {
     border: 2px dotted #00F;
 }
 #dummy-parent{
-    height:1000px;
-    width:500px;
-    position:absolute;
-    top:0;
-    left:0;
+    width:100vw;
+    height:100vh;
+    position:absolute; 
+	display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 </style>
