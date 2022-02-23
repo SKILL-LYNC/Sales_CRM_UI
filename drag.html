@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>jQuery UI Droppable</title>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/start/jquery-ui.css"> 
+<style type="text/css">
+#parentElement {
+    width: 500px;
+    height: 200px;
+    margin: 20px auto;
+    background: lightgray;
+    position: relative;
+    overflow:hidden;
+}
+#dragElement {
+    font-family: Tahoma, sans;
+    color: black;
+    background: orange;
+    width: 100px;
+    height: 100px;
+}
+p {
+    margin: 0; padding: 0;
+}
+.ui-resizable-helper {
+    border: 2px dotted #00F;
+}
+#dummy-parent{
+    height:1000px;
+    width:500px;
+    position:absolute;
+    top:0;
+    left:0;
+    
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
+</script>
+
+</head>
+<body>
+<div id="parentElement">
+    <div id="dummy-parent">
+        <div id="dragElement" class="dragClass">
+            <p>Drag me around!</p>
+        </div>
+    </div>
+</div>
+<script>
+$("#dragElement")
+    .draggable({
+        cursor      : "move",
+        scroll      : false,
+        containment : "parent",
+        drag : function(event, ui) {
+            expandParent("#parentElement", "#dragElement");
+        }
+    })
+    .resizable({
+        containment : "parent",
+        resize : function(event, ui) {
+            expandParent("#parentElement", "#dragElement");
+        }
+    });
+
+function expandParent(parentName, childName) {
+    var dragEl = $(childName);
+    var parentEl = $(parentName);
+    var dragElHeight=dragEl.height();
+    if(parentEl.height() <= dragElHeight) {
+        parentEl.height(dragElHeight);
+    }
+}
+
+</script>
+</body>
+</html>				
