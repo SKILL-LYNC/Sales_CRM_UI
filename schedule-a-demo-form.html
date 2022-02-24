@@ -81,6 +81,31 @@
 		.schedule_checkbox:not(:checked)+label:hover {
 			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 		}
+
+		.infor_box{
+			padding: 5px;
+			/* background: #fff; */ 
+		}
+		.infor_box i{
+			/* color: #ffffff;
+			background: #194bdb; */
+			color: #000;
+			padding: 10px 8px 8px 10px;	
+		}
+
+		.infor_box label {
+			/* color: #ffffff;
+			background: #2196f3; */
+			color: #000;
+			margin-right: 5px;
+			padding: 5px;
+			/* padding: 5px 8px 6px 8px;	 */
+			margin-bottom: 0;
+		}
+		.infor_box span{
+			background: #ffffff;
+    		/* padding: 6px 6px 8px 10px; */
+}
 	</style>
 </head>
 
@@ -93,7 +118,11 @@
 			<button class="btn blue_btn bg_gradient tx-white w-100 mg-b-15 tx-left tx-14 tx-bold" data-toggle="modal"
 				data-target="#schedule_a_demo"><i class="fa fa-cog mg-r-10" aria-hidden="true"></i>Form</button>
 		</div>
+
+
+		
 	</div>
+	
 
 	<div class="modal fade select-modal-parent show" id="schedule_a_demo" tabindex="-1" role="dialog"
 		aria-labelledby="autodial_setting">
@@ -127,68 +156,91 @@
 					<div class="tab-content bd bd-t-0 pd-15-f ht335" id="myTabContent">
 
 						<div class="tab-pane fade active show" id="lead" role="tabpanel" aria-labelledby="lead-tab">
-							<form>
-								<div class="row tx-12">
-									<div class="col-md-6">
-										<div class="row form-group">
-											<label class="col-md-4">Lead Name <span class="tx-danger">*</span></label>
-											<span class="col-md-8 info_data">: Deepika.V</span>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="row form-group">
-											<label class="col-md-4">Lead Email <span class="tx-danger">*</span></label>
-											<span class="col-md-8 info_data">: deepika.v@skill-lync.com</span>
+						
+							<div class="">
+								<div class="row">
+								<div class="col-md-6">
+									<div class="bd bg-white">
+										<div class="d-flex tx-14-f infor_box">
+											<div><i class="fa fa-user-o" aria-hidden="true"></i><label>Name :</label><span>Jhon Drum Recordoo whoo</span> </div>
 										</div>
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="row form-group">
-											<label class="col-md-4">Lead Phone <span class="tx-danger">*</span></label>
-											<span class="col-md-8 info_data">: 9170985417</span>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="row form-group">
-											<label class="col-md-4">Lead State</label>
-											<span class="col-md-8 info_data">: Tamil Nadu</span>
+								<div class="col-md-6">
+									<div class="bd bg-white">
+										<div class="d-flex tx-14-f infor_box">
+											<div><i class="fa fa-envelope-o" aria-hidden="true"></i><label>Email :</label><span>jhondrumrec@skill-lync.com</span> </div>
 										</div>
 									</div>
 								</div>
+								</div>
+						
 								<div class="row">
-									<div class="col-md-6">
-										<div class="row form-group">
-											<label class="col-md-4">Lead City</label>
-											<span class="col-md-8 info_data">: Chennai</span>
+									<div class="col-md-4 mg-t-15">
+										<div class="bd bg-white">
+											<div class="d-flex tx-14-f infor_box">
+												<div><i class="fa fa-phone" aria-hidden="true"></i><label>Phone :</label><span>+91 8600567892</span> </div>
+											</div>
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div class="row form-group">
-											<label class="col-md-4">Language<span class="tx-danger">*</span></label>
-											<span class="col-md-8 info_data">: English</span>
+									<div class="col-md-4 mg-t-15">
+										<div class="bd bg-white">
+											<div class="d-flex tx-14-f infor_box">
+												<div><i class="fa fa-comment-o" aria-hidden="true"></i><label>Language :</label><span>Hindi/English</span> </div>
+											</div>
 										</div>
 									</div>
+									<div class="col-md-4 mg-t-15">
+										<div class="bd bg-white">
+											<div class="d-flex tx-14-f infor_box">
+												<div><i class="fa fa-graduation-cap" aria-hidden="true"></i><label>Customer Profile :</label><span>Student</span> </div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+								<div class="row">
+									<div class="col-md-4 mg-t-15">
+										<div class="bd bg-white">
+											<div class="d-flex tx-14-f infor_box">
+												<div><i class="fa fa-globe" aria-hidden="true"></i><label>Country :</label><span>India</span> </div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-4 mg-t-15">
+										<div class="bd bg-white">
+											<div class="d-flex tx-14-f infor_box">
+												<div><i class="fa fa-map-marker" aria-hidden="true"></i><label>State :</label><span>Lucknow</span> </div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-4 mg-t-15">
+										<div class="bd bg-white">
+											<div class="d-flex tx-14-f infor_box">
+												<div><i class="fa fa-map-marker" aria-hidden="true"></i><label>City :</label><span>Lucknow</span> </div>
+											</div>
+										</div>
+									</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4 mg-t-15">
+											<div class="bd bg-white">
+												<div class="d-flex tx-14-f infor_box">
+													<div><i class="fa fa-clock-o" aria-hidden="true"></i><label>Time Zone :</label><span>Asia/South</span> </div>
+												</div>
+											</div>
+										</div>
+									<div class="col-md-4 mg-t-15">
+										<div class="bd bg-white">
+											<div class="d-flex tx-14-f infor_box">
+												<div><i class="fa fa-wrench" aria-hidden="true"></i><label>Experience Level for this lead :</label><span>Moderate</span> </div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-								</div>
-								<div class="row">
-
-									<div class="col-md-6">
-										<div class="row form-group">
-											<label class="col-md-4">Customer Profile<span
-													class="tx-danger">*</span></label>
-											<span class="col-md-8 info_data">: Student</span>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="row form-group">
-											<label class="col-md-4">Experience Level for this lead<span
-													class="tx-danger">*</span></label>
-											<span class="col-md-8 info_data">: Moderate</span>
-										</div>
-									</div>
-								</div>
-							</form>
+							
 						</div>
 						<div class="tab-pane fade " id="session" role="tabpanel" aria-labelledby="session-tab">
 							<form>
@@ -375,7 +427,7 @@
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 	<script>
-
+		feather.replace();
 		$('.select_search').select2();
 
 	</script>
