@@ -33,7 +33,7 @@
 			font-weight: 600;
 		}
 
-		.view_info a {
+		.lead_txt_clr a {
 			background: linear-gradient(#194bdb, #007ae3);
 			color: #fff;
 			padding: 4px 8px;
@@ -44,8 +44,8 @@
 		}
 
 		.session_info fieldset {
-			background: #fafbff;
-			border: 2px solid #d2e3ff;
+			background: #f2fffc;
+			border: 2px solid #a0ffed;
 			border-radius: 5px;
 		}
 
@@ -82,7 +82,7 @@
 		}
 
 		.feedback_bg .card-block {
-			width: 18%;
+			width: 115px;
 			height: 90px;
 			border-radius: 5px !important;
 			background-color: #fff;
@@ -123,6 +123,7 @@
 		}
 
 		.selected_cus {
+			/* background-color: #9ced3e; */
 			font-weight: 700;
 			font-size: 11px;
 		}
@@ -168,16 +169,19 @@
 		}
 
 		.selected_cus.ligh_orange {
+			/* background-color: #e3a447 !important; */
 			background: linear-gradient(180deg, #eddc2c 0%, #fdad35 100%);
 			color: #000;
 		}
 
 		.selected_cus.ligh_red {
+			/* background-color: #ff392b !important; */
 			background: linear-gradient(180deg, #ff392b 0%, #fe855f 100%);
 			color: #000;
 		}
 
 		.selected_cus.dark_red {
+			/* background-color: #db3e18 !important; */
 			background: linear-gradient(180deg, #f32222 0%, #db3e18 100%);
 			color: #fff;
 		}
@@ -191,10 +195,10 @@
 		}
 
 		.bd_info {
-			background: #e8fbf7;
-			padding: 57px 15px;
+			background: #e2f0ff;
+			padding: 23px 15px;
 			border-radius: 5px;
-			border: 1px solid #49ffdc;
+			border: 2px solid #b8dbff;
 		}
 
 		.bd_info .btn {
@@ -345,7 +349,9 @@
 								class="fa  fa-power-off mg-r-10"></i>Signout</a>
 					</div>
 				</div>
-			
+				<!-- <div class="side-nav-btn"> -->
+				<!-- <i class="fa fa-bars"></i> -->
+				<!-- </div> -->
 			</div>
 			<!-- navbar-right -->
 		</nav>
@@ -375,11 +381,9 @@
 					<div class="col-md-12 pd-0 mg-t-15">
 						<div class="bd bd_info" id="response_display">
 							<div class="tx-center">
-								<img src="./images/demo-video.svg" class="" style="width:100%; height:auto;"
-									alt="Skill Demo">
-
-								<div><h5>Bala Murugan is Joined....</h5></div>	
-							
+								<img src="./images/demo-video_student.svg" class="" style="width:80%; height:auto;"
+									alt="Skill Demo" />
+									<div><h5>Bala Murugan is Joined....</h5></div>	
 							</div>
 						</div>
 					</div>
@@ -390,17 +394,17 @@
 							<legend>Session Information</legend>
 							<div class="row lead_txt_clr tx-12">
 								<div class="col-md-6">
-									<label class="col-4">Name</label>
+									<label class="col-4">Lead Name</label>
 									<span class="col-8">: Vivekanad Karpe</span>
 								</div>
 								<div class="col-md-6">
-									<label class="col-4">Email</label>
+									<label class="col-4">Lead Email</label>
 									<span class="col-8">: vivekarpe@gmail.com</span>
 								</div>
 							</div>
 							<div class="row lead_txt_clr tx-12">
 								<div class="col-md-6">
-									<label class="col-4">Phone</label>
+									<label class="col-4">Lead Phone</label>
 									<span class="col-8">: +91 9380304282</span>
 								</div>
 								<div class="col-md-6">
@@ -411,19 +415,24 @@
 
 							<div class="row lead_txt_clr tx-12">
 								<div class="col-md-12">
-									<label class="col-2">Course</label>
-									<a class="col-10 pd-l-10 view_ic" href="#">: Master's certification program in data science and
-										machine learning <i data-feather="corner-right-up"></i></a></a> 
+									<label class="col-3">Course Name</label>
+									<span class="col-9 pd-l-10">: Master's certification program in data science and
+										machine learning</span>
 								</div>
 							</div>
 							<div class="row tx-12 pd-b-10">
-								  
-									<div class="lead_txt_clr view_info">
-										<a class=" mg-b-10 mg-l-30 tx-10 " data-toggle="collapse" href="#viewmore_info"
+								<div class="col-md-3 lead_txt_clr mg-x-15">
+									<div class="view_ic">
+										<a href="#"><i data-feather="eye"></i> Course details</i></a>
+									</div>
+								</div>
+								<div class="col-md-8">
+									<div class="lead_txt_clr">
+										<a class=" mg-b-10 tx-10" data-toggle="collapse" href="#viewmore_info"
 											role="button" aria-expanded="false" aria-controls="collapseExample">View
 											more information <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 									</div>
-								 
+								</div>
 							</div>
 
 							<div class="row tx-12">
@@ -472,7 +481,7 @@
 
 						</fieldset>
 					</div>
-					<div class="col-md-12 pd-0 mg-t-10">
+					<div class="col-md-12 pd-0">
 						<div class="pd-b-10 session_info">
 							<fieldset>
 								<legend>Feedback</legend>
@@ -483,9 +492,10 @@
 										customer?
 									</p>
 
-									<div class="radio-group row  px-3 text-center flex-nowrap">
+									<div class="radio-group row  px-3 text-center">
 
-										<div class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio_cus selected_cus darker_green">
+										<div
+											class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio_cus selected_cus darker_green">
 											<div class="flex-row">
 												<div class="col pd-0">
 													<div class="pic"><i data-feather="thumbs-up"></i> </div>
@@ -507,7 +517,7 @@
 											<div class="flex-row">
 												<div class="col pd-0">
 													<div class="pic"> <i data-feather="meh"></i> </div>
-													<p>Average</p>
+													<p>Neither Satisfied Nor Dissatisfied</p>
 												</div>
 											</div>
 										</div>
@@ -529,13 +539,13 @@
 												</div>
 											</div>
 										</div>
-										
-									</div>
-									<div class="col-auto pd-l-5 py-0">
+										<div class="col-auto pd-l-5 py-0">
 											<textarea class="form-control" rows="4" cols="50"
 												placeholder="Enter your notes..."></textarea>
 											<button class="btn btn-primary mg-y-10 float-right">Submit</button>
 										</div>
+									</div>
+
 								</form>
 							</fieldset>
 						</div>
