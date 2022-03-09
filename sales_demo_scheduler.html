@@ -1,6 +1,4 @@
-<?php
-   defined('BASEPATH') OR exit('No direct script access allowed');
-   ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -192,7 +190,7 @@
 
 		.bd_info {
 			background: #e8fbf7;
-			padding: 57px 15px;
+			padding: 25px 0px;
 			border-radius: 5px;
 			border: 1px solid #49ffdc;
 		}
@@ -206,6 +204,32 @@
 			height: 16px;
 			width: 16px;
 		}
+		.demo_txt h2{
+			color: #2cd0ac;
+			font-weight: 400;
+			margin-bottom: 10px;
+		}
+		.join_status h5{
+			color: #1355dd;
+			font-weight: 600;
+			margin: 15px 0;
+		}
+		.play_btn i{
+			color: #4e93e2;
+    		font-size: 80px;
+		}
+		.play_btn i:hover{
+			color: #6ce8cb;
+    		font-size: 80px;
+    		box-shadow: 0px 0px 15px 6px #ffffff;
+    		border-radius: 50%;
+		}
+		.course_title a{
+			color: #001737 !important;
+		}
+		.feedback h5{color: #79797a;text-align:center;font-weight: 400;}
+		.feedback img{text-align:center;} 	
+		
 	</style>
 </head>
 
@@ -367,59 +391,68 @@
 					</nav>
 				</div>
 			</div>
-			<div>
+			<!--<div>
 				<h5>Master's certification program in data science and machine learning</h5>
-			</div>
+			</div>-->
 			<div class="row">
-				<div class="col-md-7">
-					<div class="col-md-12 pd-0 mg-t-15">
+				<div class="col-md-8">
+					<div class="container pd-0 mg-t-15">
 						<div class="bd bd_info" id="response_display">
 							<div class="tx-center">
-								<img src="./images/demo-video.svg" class="" style="width:100%; height:auto;"
-									alt="Skill Demo">
+								<div class="demo_txt"><h2>Demo</h2></div>	
+								<!-- <img src="./images/demo-video.svg" class="" style="width:100%; height:auto;"
+									alt="Skill Demo"> -->
+									<img src="./images/logo.png" class=""
+									alt="Skill Demo" />
+									<!-- <div class="embed-responsive embed-responsive-16by9">
+									  <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207" allowfullscreen></iframe>
+									</div> -->
+									<div class="play_btn"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
 
-								<div><h5>Bala Murugan is Joined....</h5></div>	
+								<div class="join_status"><h5><i class="fa fa-video-camera" aria-hidden="true"></i> Bala Murugan is Joined....</h5></div>	
 							
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-5">
+				<div class="col-md-4">
 					<div class="col-md-12 session_info pd-0">
 						<fieldset>
 							<legend>Session Information</legend>
-							<div class="row lead_txt_clr tx-12">
+							<div class="row lead_txt_clr tx-12 pd-x-5">
 								<div class="col-md-6">
-									<label class="col-4">Name</label>
-									<span class="col-8">: Vivekanad Karpe</span>
+									<label class="mg-0">Name :</label>
+									<div>Vivekanad Karpe</div>
 								</div>
 								<div class="col-md-6">
-									<label class="col-4">Email</label>
-									<span class="col-8">: vivekarpe@gmail.com</span>
+									<label class="mg-0">Email :</label>
+									<div>vivekarpe@gmail.com</div>
 								</div>
 							</div>
-							<div class="row lead_txt_clr tx-12">
+							<div class="row lead_txt_clr tx-12 pd-x-5">
 								<div class="col-md-6">
-									<label class="col-4">Phone</label>
-									<span class="col-8">: +91 9380304282</span>
+									<label class="mg-0">Phone :</label>
+									<div>+91 9380304282</div>
 								</div>
 								<div class="col-md-6">
-									<label class="col-4">Online/Offline</label>
-									<span class="col-8">: Online</span>
+									<label class="mg-0">Online/Offline :</label>
+									<div>Online</div>
 								</div>
 							</div>
 
-							<div class="row lead_txt_clr tx-12">
+							<div class="row lead_txt_clr tx-12 pd-x-5">
 								<div class="col-md-12">
-									<label class="col-2">Course</label>
-									<a class="col-10 pd-l-10 view_ic" href="#">: Master's certification program in data science and
-										machine learning <i data-feather="corner-right-up"></i></a></a> 
+									<label class="mg-0">Course :</label>
+									<div class="course_title">
+										<a class="view_ic" href="#">Master's certification program in data science and
+										machine learning <i class="fa fa-external-link" aria-hidden="true"></i></a>
+									</div> 
 								</div>
 							</div>
-							<div class="row tx-12 pd-b-10">
+							<div class="row tx-12 pd-y-10">
 								  
 									<div class="lead_txt_clr view_info">
-										<a class=" mg-b-10 mg-l-30 tx-10 " data-toggle="collapse" href="#viewmore_info"
+										<a class=" mg-b-10 mg-l-20 tx-10 " data-toggle="collapse" href="#viewmore_info"
 											role="button" aria-expanded="false" aria-controls="collapseExample">View
 											more information <i class="fa fa-caret-down" aria-hidden="true"></i></a>
 									</div>
@@ -429,40 +462,39 @@
 							<div class="row tx-12">
 								<div class="col-md-12">
 									<div class="collapse mg-t-5" id="viewmore_info">
-										<div class="row lead_txt_clr tx-12">
+										<div class="row lead_txt_clr tx-12 pd-x-5">
 											<div class="col-md-6">
-												<label class="col-6">Is Career Counselling</label>
-												<span class="col-6">: Yes</span>
+												<label class="mg-0">Is Career Counselling :</label>
+												<div>Yes</div>
 											</div>
 											<div class="col-md-6">
-												<label class="col-6">Purpose of the demo</label>
-												<span class="col-6">: Career Guidance</span>
-											</div>
-
-										</div>
-										<div class="row lead_txt_clr tx-12">
-
-											<div class="col-md-6">
-												<label class="col-6">Customer Profile</label>
-												<span class="col-6">: Working</span>
-											</div>
-											<div class="col-md-6">
-												<label class="col-6">Language</label>
-												<span class="col-6">: English</span>
+												<label class="mg-0">Purpose of the demo :</label>
+												<div>Career Guidance</div>
 											</div>
 
 										</div>
-										<div class="row lead_txt_clr tx-12">
+										<div class="row lead_txt_clr tx-12 pd-x-5">
 
+											<div class="col-md-6">
+												<label class="mg-0">Customer Profile :</label>
+												<div>Working</div>
+											</div>
+											<div class="col-md-6">
+												<label class="mg-0">Language :</label>
+												<div>English</div>
+											</div>
+
+										</div>
+										<div class="row lead_txt_clr tx-12 pd-x-5">
 											<div class="col-md-12">
-												<label class="col-8">Course Price (Conveyed to Customer)</label>
-												<span class="col-4">: 250000</span>
+												<label class="mg-0">Course Price (Conveyed to Customer) :</label>
+												<div>250000</div>
 											</div>
 										</div>
-										<div class="row lead_txt_clr tx-12">
+										<div class="row lead_txt_clr tx-12 pd-x-5">
 											<div class="col-md-12">
-												<label class="col-8">Experience Level for this Lead</label>
-												<span class="col-4">: Moderate</span>
+												<label class="mg-0">Experience Level for this Lead :</label>
+												<div>Moderate</div>
 											</div>
 										</div>
 									</div>
@@ -476,14 +508,13 @@
 						<div class="pd-b-10 session_info">
 							<fieldset>
 								<legend>Feedback</legend>
-								<form class="feedback_bg rounded pd-10-f">
-
-									<h6>Overall Comment for Vivekanad Karpe | vivekarpe@gmail.com</h6>
-									<p class="satiesfy">How satisfied were you overall with your interaction with customer? </p>
-
-									<div class="radio-group row  px-3 text-center flex-nowrap">
-
-										<div class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio_cus selected_cus darker_green">
+								<div id="feeback_show">
+								
+									<!-- <h6>Overall Comment for Vivekanad Karpe | vivekarpe@gmail.com</h6> -->
+									<p class="satiesfy pd-x-5">Tell your interaction with customer? </p>
+									<form class="feedback_bg rounded pd-10-f feedback_survey">
+									<div class="radio-group row d-flex justify-content-between pd-x-15 text-center">
+										<div class="col-auto card-block  text-center radio_cus  darker_green">
 											<div class="flex-row">
 												<div class="col pd-0">
 													<div class="pic"><i data-feather="thumbs-up"></i> </div>
@@ -492,7 +523,7 @@
 											</div>
 										</div>
 										<div
-											class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio_cus light_green">
+											class="col-auto card-block  text-center radio_cus light_green">
 											<div class="flex-row">
 												<div class="col pd-0">
 													<div class="pic"> <i data-feather="smile"></i> </div>
@@ -501,7 +532,7 @@
 											</div>
 										</div>
 										<div
-											class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio_cus ligh_orange">
+											class="col-auto card-block  text-center radio_cus ligh_orange">
 											<div class="flex-row">
 												<div class="col pd-0">
 													<div class="pic"> <i data-feather="meh"></i> </div>
@@ -510,7 +541,7 @@
 											</div>
 										</div>
 										<div
-											class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio_cus ligh_red">
+											class="col-auto card-block  text-center radio_cus ligh_red">
 											<div class="flex-row">
 												<div class="col pd-0">
 													<div class="pic"> <i data-feather="frown"></i></div>
@@ -518,8 +549,7 @@
 												</div>
 											</div>
 										</div>
-										<div
-											class="col-auto mr-sm-2 mx-1 card-block py-0 text-center radio_cus dark_red">
+										<div class="col-auto card-block  text-center radio_cus dark_red">
 											<div class="flex-row">
 												<div class="col pd-0">
 													<div class="pic"> <i data-feather="thumbs-down"></i> </div>
@@ -527,18 +557,24 @@
 												</div>
 											</div>
 										</div>
-										
 									</div> 
-										<div class="d-flex justify-content-center">
-												 
-											<img src="images/thank_you.gif" alt="thank you" class="gif_img">
-										</div>
+									</form>
+
 									<div class="col-auto pd-l-5 py-0">
-											<textarea class="form-control" rows="4" cols="50"
-												placeholder="Enter your notes..."></textarea>
-											<button class="btn btn-primary mg-y-10 float-right">Submit</button>
-										</div>
-								</form>
+										<textarea class="form-control" rows="4" cols="50"
+											placeholder="Enter your notes..."></textarea>
+										<button class="btn btn-primary btn-xs mg-y-10 float-right feed_submit">Submit</button>
+									</div>
+								</div>
+									<div class="col-auto" id="feedback_get" style="display: none;">
+									<div class="feedback mg-t-10 tx-center">
+										<h5>Thank you for your Feedback...!</h5>
+										<img src="images/thank_you.gif" alt="feedback_img">
+										<p class="mg-b-0 tx-success tx-semibold">Very Satisfied</p>
+										<p class="tx-primary">Very Satisfied with the demo, the given demo was useful with my best choice of my carrier growth training.</p>
+									</div>
+									</div>
+
 							</fieldset>
 						</div>
 
@@ -593,7 +629,21 @@
 				$('.radio_cus').removeClass('selected_cus');
 				$(this).addClass('selected_cus');
 			});
-		});
+			
+			// $('.feed_submit').click(function(){
+			// 	$('.feedback_survey').addClass('d-none');
+			// 	$('.feedback_record').removeClass('d-none');
+			// });
+
+			
+	         $(".feed_submit").click(function () {
+	            $("#feedback_get").show();
+	            $("#feeback_show").hide();
+	         });
+
+	      });
+
+		
 	</script>
 </body>
 
