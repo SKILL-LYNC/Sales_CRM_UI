@@ -24,6 +24,13 @@
       <link rel="stylesheet" href="css/dashforge.css">
       <link rel="stylesheet" href="css/sales_crm.css">
       <link rel="stylesheet" href="css/bootstrap-clockpicker.css">
+	  <style>
+	  .status_radio_check:checked ~ .custom-control-label::before{
+		content: "\f00c";
+    font-family: 'FontAwesome';
+    text-align: center;
+	  }
+	  </style>
    </head>
    <body>
       <header>
@@ -479,6 +486,7 @@
                                        <a class="btn btn-cust active_btn">t+2 days</a>
                                        <a class="btn btn-cust">t+4 days</a>
                                        <a class="btn btn-cust">Custom</a>
+									   <input type="date" name="followup" />
                                     </div>
                                     <div class="pd-t-5 pd-b-5">
                                        <a class="btn btn-cust"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
@@ -508,16 +516,16 @@
                                  <div class="col-md-4 pd-10">
                                     <textarea class="lead_details_textarea bd rounded-5" name="" placeholder="Please put a comment regarding the current purchase."></textarea>
                                     <div class="items-sep pd-t-5 pd-b-5 font_10">
-                                       <div class="custom-control custom-checkbox">
-                                          <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                       <div class="custom-control ">
+                                          <input type="radio" class="custom-control-input status_radio_check" name="status_radio" id="customCheck1">
                                           <label class="custom-control-label" for="customCheck1">Positive</label>
                                        </div>
-                                       <div class="custom-control custom-checkbox">
-                                          <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                       <div class="custom-control">
+                                          <input type="radio" class="custom-control-input status_radio_check" name="status_radio" id="customCheck2">
                                           <label class="custom-control-label" for="customCheck2">Neutral</label>
                                        </div>
-                                       <div class="custom-control custom-checkbox">
-                                          <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                       <div class="custom-control">
+                                          <input type="radio" class="custom-control-input status_radio_check" name="status_radio" id="customCheck3">
                                           <label class="custom-control-label" for="customCheck3">Negative</label>
                                        </div>
                                     </div>
