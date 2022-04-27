@@ -1,0 +1,568 @@
+<?php
+   defined('BASEPATH') OR exit('No direct script access allowed');
+   ?><!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Meta links-->
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1" name="viewport">
+      <meta name="keywords" content="Skill-Lync Portal, Course Library">
+      <meta name="description" content="Skill-Lync Course Library">
+      <meta name="author" content="Skill-Lync">
+      <meta name="robot" content="index, follow">
+      <!-- Title -->
+      <title>Course Library</title>
+      <!-- CSS -->
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/select2.min.css">
+      <link rel="stylesheet" href="css/ionicons.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="css/fullcalendar.min.css" rel="stylesheet">
+      <link href="css/quill.snow.css" rel="stylesheet"> 
+      <link href="css/spectrum.css" rel="stylesheet">
+      <!-- DashForge CSS -->
+      <link rel="stylesheet" href="css/dashforge.css">
+      <link rel="stylesheet" href="css/sales_crm.css">
+      <link rel="stylesheet" type="text/css" href="css/course_library.css">
+      <link rel="stylesheet" href="css/bootstrap-clockpicker.css">
+	  
+	  <style>
+		.tab_scroll
+		{
+			padding:10px;
+			max-height: 55vh;
+			overflow-y:auto;
+		}
+		.usps_bg
+		{
+			background: #fff;
+			border-radius: 3px;
+			box-shadow: 5px 5px 10px 0 #ccc;
+			font-size: 12px;
+			padding-top: 10px;
+		}
+		
+		.nav-pills .nav-link
+			{
+				font-size:16px;
+			}
+			.container_top
+			{
+				margin-top:55px;
+			}
+			ul, #myUL {
+			  list-style-type: none;
+			}
+
+			#myUL {
+			  margin: 0;
+			  padding: 0;
+			}
+
+			.caret {
+			  cursor: pointer;
+			  -webkit-user-select: none; /* Safari 3.1+ */
+			  -moz-user-select: none; /* Firefox 2+ */
+			  -ms-user-select: none; /* IE 10+ */
+			  user-select: none;
+			}
+
+			.caret::before {
+			  content: "\25B6";
+			  color: #89968b;
+			  display: inline-block;
+			  margin-right: 6px;
+			}
+
+			.caret-down::before {
+			  -ms-transform: rotate(90deg); /* IE 9 */
+			  -webkit-transform: rotate(90deg); /* Safari */'
+			  transform: rotate(90deg);  
+			}
+
+			.nested {
+			  display: none;
+			}
+
+			.active {
+			  display: block;
+			}
+			.left_tab_scroll
+			{
+				max-height: 360px;
+				overflow-y: auto;
+			}
+			.tab_bg
+			{
+				background: #eeeeee;
+			}
+			.input_bg
+			{
+				background:transparent;
+			}
+			.txt_size
+			{
+				font-size:16px;
+			}
+			.select2-selection--single
+			{
+				width:250px;
+			}
+			.breadcrumb
+			{
+				background-color:transparent;
+			}
+			.footer_top
+			{
+				margin-top:50px;
+			}
+	  </style>
+		  
+   </head>
+   <body>
+      <header>
+         <nav class="navbar navbar-header navbar-expand-lg d-none-lg justify-content-between bg-gray-900">
+            <div class="navbar-brand">
+               <a class=""><img src="./images/white-logo.png" class="wd-auto ht-30" id="" alt="logo"></a></p>
+            </div>
+            <!-- navbar-brand -->
+            <div  class="navbar-menu-wrapper justify-content-end pd-r-0 d-none" id="navbar-content">
+               <div class="nav navbar-menu bd-r hide-nav cus_menu" id="navbar-menu">
+                  <div class="nav-item with-sub sub-menu">
+                     <a class="nav-link" href="#" role="button">Dashboard</a>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link active">Content</a>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link">Leads</a>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link">Sales Demo</a>
+                  </div>
+                  <div class="nav-item with-sub sub-menu">
+                     <a href="" class="nav-link">Reports</a>
+                     <!-- nav-sub -->
+                  </div>
+               </div>
+            </div>
+            <div class="navbar-right justify-content-end">
+               <div class="dropdown dropdown-profile mg-r-10 nav-right-menu">
+                  <a href="" class="dropdown-link nav-right-icon" data-toggle="dropdown" data-display="static">
+                  <img src="images/search_white.png" class="wd-20 ht-20" alt="search">
+                  </a><!-- dropdown-link -->
+                  <div class="dropdown-menu dropdown-menu-right pd-15-f nav-right-drop">
+                     <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search Leads" aria-label="button-search-lead" aria-describedby="button-search-lead">
+                        <div class="input-group-append">
+                           <button class="btn btn-light" type="button" id="button-search-lead"><i class="fa fa-search tx-white"></i></button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="dropdown dropdown-profile mg-r-10 ">
+                  <a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
+                  <span class="wd-20 ht-20" alt="question_Mark">
+                  <i class="fa fa-question-circle-o tx-white tx-18" aria-hidden="true"></i></span>
+                  </a><!-- dropdown-link -->
+                  <div class="dropdown-menu dropdown-menu-right pd-15-f">
+                     <a href="#" class="dropdown-item nav-right-item">Manage Apps</a>
+                     <a href="#" class="dropdown-item nav-right-item">Apps Marketplace</a>
+                     <a href="#" class="dropdown-item nav-right-item">Connect My Inbox</a>
+                  </div>
+               </div>
+               <div class="dropdown dropdown-profile">
+                  <a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
+                  <img src="images/crm/user.svg" class="img-fluid ht-25" alt="user">
+                  </a><!-- dropdown-link -->
+                  <div class="dropdown-menu dropdown-menu-right tx-13 pd-15-f">
+                     <a href="#" class="dropdown-item nav-right-item">Sarang V</a>
+                     <a href="#" class="dropdown-item tx-11 nav-right-item">sarang@skill-lync.com</a>
+                     <a href="#" class="dropdown-item nav-right-item">Skill Lync</a>
+                     <div class="dropdown-divider"></div>
+                     <a  class="dropdown-item nav-right-item"><i class="fa fa-cogs mg-r-10"></i>Settings</a>
+                     <a href="#" class="dropdown-item nav-right-item"><i class="fa fa-user-plus mg-r-10"></i>Manage Users</a>
+                     <a href="#" class="dropdown-item nav-right-item"><i class="fa  fa-power-off mg-r-10"></i>Signout</a>
+                  </div>
+               </div>
+               <!-- <div class="side-nav-btn"> -->
+               <!-- <i class="fa fa-bars"></i> -->
+               <!-- </div> -->
+            </div>
+            <!-- navbar-right -->
+         </nav>
+         <!-- navbar -->
+      </header>
+      <!-- Navbar Header-->
+	  <div class="container-fluid pd-0">
+		  <div class="">
+			<nav aria-label="breadcrumb">
+			  <ol class="breadcrumb mb-0">
+				<li class="breadcrumb-item">Dashboard</li>
+				<li class="breadcrumb-item active" aria-current="page"><a href="#">Course Library</a></li>
+			  </ol>
+			</nav>
+			<div class="pd-x-15 pd-b-10 tx-18 tx-semibold">
+				Course Library
+			</div>
+			<div class="row cou_lib_navbar mg-0">
+			  <nav class="navbar navbar-expand-lg wd-100p">
+				<div class="container-fluid">
+				  <div class="collapse navbar-collapse" id="nvbCollapse">
+					<ul class="navbar-nav border-0">
+					  <li class="nav-item active pl-1">
+						<a class="nav-link" href="#">Home</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#">Profile Menu</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#">Domain</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#">Masters</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#">Individual</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#">Skill Center</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#">Software Based Courses</a>
+					  </li>
+					</ul>
+					<div class="ml-auto course_library d-flex">
+						<form class="form-inline my-2 my-lg-0">
+							<select class="nav_select" name="state">
+							  
+							</select>
+						</form>
+					  
+					</div>
+				  </div>
+				</div>
+			  </nav>
+			</div>
+			<div class="pd-15 course_library_tab">
+			  <div class="row justify-content-between mg-0">
+				<div class="tx-18 tx-semibold">Skill-Lync Programs </div>
+				
+				<div class="d-flex align-items-center mg-r-10">
+					<div class="custom-control custom-switch mg-r-10">
+					  <input type="checkbox" class="custom-control-input master_course" id="master_only">
+					  <label class="custom-control-label" for="master_only">Show Master Only</label>
+					</div>
+					<div class="custom-control custom-switch">
+					  <input type="checkbox" class="custom-control-input" id="newprog_only">
+					  <label class="custom-control-label" for="newprog_only">Show New Programs</label>
+					</div>
+				</div>
+			  </div>
+			  <div class="mg-t-10 course_lib_main_tab">
+				<ul class="nav nav-tabs" id="course_list_tab" role="tablist">
+				  <li class="nav-item">
+					<a class="nav-link active" id="mechanical-tab" data-toggle="tab" href="#mechanical" role="tab" aria-controls="mechanical" aria-selected="true">Mechanical</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" id="electrical-tab" data-toggle="tab" href="#electrical" role="tab" aria-controls="electrical" aria-selected="false">Electrical</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" id="civil-tab" data-toggle="tab" href="#civil" role="tab" aria-controls="civil" aria-selected="false">Civil</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" id="computer-tab" data-toggle="tab" href="#computer" role="tab" aria-controls="computer" aria-selected="false">Computer Science</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" id="electronics-tab" data-toggle="tab" href="#electronics" role="tab" aria-controls="electronics" aria-selected="false">Electronics</a>
+				  </li>
+				   <li class="nav-item">
+					<a class="nav-link" id="resarchdevelopment-tab" data-toggle="tab" href="#resarchdevelopment" role="tab" aria-controls="resarchdevelopment" aria-selected="false">Resarch & Development</a>
+				  </li>
+				   <li class="nav-item">
+					<a class="nav-link" id="medicaltechnology-tab" data-toggle="tab" href="#medicaltechnology" role="tab" aria-controls="medicaltechnology" aria-selected="false">Medical Technology</a>
+				  </li>
+				</ul>
+				<div class="tab-content tab_bg bd-t-0 pd-10" id="course_content_tab">
+					<div class="tab-pane fade show active" id="mechanical" role="tabpanel" aria-labelledby="mechanical-tab">
+					
+						<div class="row course_library_sub_menu mg-0">
+							
+							<div class="usps_bg col-2 left_tab_scroll">
+								
+								<div class="nav flex-column nav-pills" id="v-pills-tree" role="tablist" aria-orientation="vertical">
+									
+										<ul id="myUL">
+											<li><a class="caret" id="v-pills-fresher-tab" data-toggle="pill" href="#v-pills-fresher" role="tab" aria-controls="v-pills-fresher" aria-selected="true">Fresher</a>
+												<ul class="nested pl-3">
+													<li><a class="caret" id="v-pills-job-leading-tab" data-toggle="pill" href="#v-pills-job-leading" role="tab" aria-controls="v-pills-job-leading" aria-selected="true">Top job leading</a>
+														<ul class="nested pl-3">
+														  <li>Automotive</li>
+														  <li>CFD</li>
+														  <li>FEA</li>
+														  <li>Design</li>
+														   <li>MDB</li>
+														  <li>Additive Manufacturing</li>
+														  <li>Med Tech</li>
+														</ul>
+													</li>
+													<li><a class="caret" id="v-pills-sem-tab" data-toggle="pill" href="#v-pills-sem" role="tab" aria-controls="v-pills-sem" aria-selected="true">Courses by semester</a>
+														<ul class="nested pl-3">
+															<li>Forth Year</li>
+															<li>Third Year</li>
+															<li>Second Year</li>
+															<li>First Year</li>
+														</ul>
+													
+													</li>
+													<li><a class="caret" id="v-pills-software-tab" data-toggle="pill" href="#v-pills-software" role="tab" aria-controls="v-pills-software">Courses by software</a>
+												
+														<ul class="nested pl-3">
+															<li>Preprocessor</li>
+															<li>Design</li>
+															<li>Solver</li>
+															<li>CFD Solver</li>
+															<li>Automation</li>
+															<li>Vehicle Dynamics</li>
+														</ul>
+													</li>  
+												</ul>
+											</li>
+											<li><a class="caret" id="v-pills-exp-tab" data-toggle="pill" href="#v-pills-exp" role="tab" aria-controls="v-pills-exp" aria-selected="true">Experienced</a>
+												<ul class="nested pl-3">
+													<li><span class="caret">Courses by Domain</span>
+														<ul class="nested pl-3">
+														  <li>Automotive</li>
+														  <li>CFD</li>
+														  <li>FEA</li>
+														  <li>Design</li>
+														   <li>MDB</li>
+														  <li>Additive Manufacturing</li>
+														  <li>Med Tech</li>
+														</ul>
+													</li>
+													<li><span class="caret">Tool-focused Courses</span>
+														<ul class="nested pl-3">
+															<li>Forth Year</li>
+															<li>Third Year</li>
+															<li>Second Year</li>
+															<li>First Year</li>
+														</ul>
+													
+													</li>
+													<li><span class="caret">Machine Learning</span>
+												
+														<ul class="nested pl-3">
+															<li>Preprocessor</li>
+															<li>Design</li>
+															<li>Solver</li>
+															<li>CFD Solver</li>
+															<li>Automation</li>
+															<li>Vehicle Dynamics</li>
+														</ul>
+													</li>  
+												</ul>
+											</li>
+										</ul>
+									
+								</div>
+							</div>
+
+							<div class="col-10 pd-r-0">
+								<div class="tab-content tab_scroll usps_bg" id="v-pills-treeContent">
+									<div class="tab-pane fade show active" id="v-pills-fresher" role="tabpanel" aria-labelledby="v-pills-fresher-tab">
+										<h4>Fresher( 71 )</h4>
+										<h6>Course Title</h6>
+										<p><a href="#">Post Graduate Program in Hybrid Electric Vehicle Design and Analysis Master<span class="badge badge-secondary ml-2">Master</span><span class="badge badge-warning ml-2">New</span></a></p>
+										<p><a href="#">Post Graduate Program in Electric Vehicle Design & Development </a></p>
+										<p><a href="#">Basics of CATIA V5<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">Post Graduate Program in Autonomous Vehicles </a></p>
+										<p><a href="#">Post Graduate Program in Design for Crashworthiness and Analysis</a></p>
+										<p><a href="#">Post Graduate Program in Automotive Design using CATIA V5</a></p>
+										<p><a href="#">Suspension Design using ADAMS<span class="badge badge-secondary ml-2">Master</span><span class="badge badge-warning ml-2">New</span></a></p>
+										<p><a href="#">MATLAB for Mechanical Engineers</a></p>
+										<p><a href="#">Introduction to Motorsport Engineering<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">Post Graduate Program in Computational Fluid Dynamics<span class="badge badge-secondary ml-2">Master</span> </a></p>
+										<p><a href="#">Post Graduate Program in Automation & Pre-Processing for FEA & CFD Analysis </a></p>
+										<p><a href="#">Post Graduate Program in External Aerodynamic Simulations<span class="badge badge-secondary ml-2">Master</span></a></p>
+									</div>
+									<div class="tab-pane fade" id="v-pills-job-leading" role="tabpanel" aria-labelledby="v-pills-job-leading-tab">
+										<h4>Top Job Leading( 51 )</h4>
+										<h6>Course Title</h6>
+										<p><a href="#">Post Graduate Program in Hybrid Electric Vehicle Design and Analysis Master<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">Post Graduate Program in Electric Vehicle Design & Development </a></p>
+										<p><a href="#">Basics of CATIA V5<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">Post Graduate Program in Autonomous Vehicles </a></p>
+										<p><a href="#">Post Graduate Program in Design for Crashworthiness and Analysis</a></p>
+										<p><a href="#">Post Graduate Program in Automotive Design using CATIA V5</a></p>
+										<p><a href="#">Suspension Design using ADAMS<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">MATLAB for Mechanical Engineers<span class="badge badge-warning ml-2">New</span></a></p>
+										<p><a href="#">Introduction to Motorsport Engineering<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">Post Graduate Program in Computational Fluid Dynamics<span class="badge badge-secondary ml-2">Master</span><span class="badge badge-warning ml-2">New</span> </a></p>
+										<p><a href="#">Post Graduate Program in Automation & Pre-Processing for FEA & CFD Analysis </a></p>
+										<p><a href="#">Post Graduate Program in External Aerodynamic Simulations<span class="badge badge-secondary ml-2">Master</span></a></p>
+									</div>
+									<div class="tab-pane fade" id="v-pills-sem" role="tabpanel" aria-labelledby="v-pills-sem-tab">
+										<h4>Course By Semester( 91 )</h4>
+										<h6>Course Title</h6>
+										<p><a href="#">Post Graduate Program in Hybrid Electric Vehicle Design and Analysis Master<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">Post Graduate Program in Electric Vehicle Design & Development </a></p>
+										<p><a href="#">Basics of CATIA V5<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">Post Graduate Program in Autonomous Vehicles <span class="badge badge-warning ml-2">New</span> </a></p>
+										<p><a href="#">Post Graduate Program in Design for Crashworthiness and Analysis</a></p>
+										<p><a href="#">Post Graduate Program in Automotive Design using CATIA V5</a></p>
+										<p><a href="#">Suspension Design using ADAMS<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">MATLAB for Mechanical Engineers</a></p>
+										<p><a href="#">Introduction to Motorsport Engineering<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">Post Graduate Program in Computational Fluid Dynamics<span class="badge badge-secondary ml-2">Master</span> </a></p>
+										<p><a href="#">Post Graduate Program in Automation & Pre-Processing for FEA & CFD Analysis </a></p>
+										<p><a href="#">Post Graduate Program in External Aerodynamic Simulations<span class="badge badge-secondary ml-2">Master</span></a></p>
+									</div>
+									<div class="tab-pane fade" id="v-pills-software" role="tabpanel" aria-labelledby="v-pills-software-tab">
+										<h4>Course By Software( 71 )</h4>
+										<h6>Course Title</h6>
+										<p><a href="#">Post Graduate Program in Hybrid Electric Vehicle Design and Analysis Master<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">Post Graduate Program in Electric Vehicle Design & Development </a></p>
+										<p><a href="#">Basics of CATIA V5<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">Post Graduate Program in Autonomous Vehicles </a></p>
+										<p><a href="#">Post Graduate Program in Design for Crashworthiness and Analysis</a></p>
+										<p><a href="#">Post Graduate Program in Automotive Design using CATIA V5</a></p>
+										<p><a href="#">Suspension Design using ADAMS<span class="badge badge-secondary ml-2">Master</span><span class="badge badge-warning ml-2">New</span></a></p>
+										<p><a href="#">MATLAB for Mechanical Engineers</a></p>
+										<p><a href="#">Introduction to Motorsport Engineering<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">Post Graduate Program in Computational Fluid Dynamics<span class="badge badge-secondary ml-2">Master</span> </a></p>
+										<p><a href="#">Post Graduate Program in Automation & Pre-Processing for FEA & CFD Analysis </a></p>
+										<p><a href="#">Post Graduate Program in External Aerodynamic Simulations<span class="badge badge-secondary ml-2">Master</span></a></p>
+									</div>
+									<div class="tab-pane fade" id="v-pills-exp" role="tabpanel" aria-labelledby="v-pills-exp-tab">
+										<h4>Experience( 81 )</h4>
+										<h6>Course Title</h6>
+										<p><a href="#">Post Graduate Program in Hybrid Electric Vehicle Design and Analysis Master<span class="badge badge-secondary ml-2">Master</span><span class="badge badge-warning ml-2">New</span></a></p>
+										<p><a href="#">Post Graduate Program in Electric Vehicle Design & Development </a></p>
+										<p><a href="#">Basics of CATIA V5<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">Post Graduate Program in Autonomous Vehicles </a></p>
+										<p><a href="#">Post Graduate Program in Design for Crashworthiness and Analysis</a></p>
+										<p><a href="#">Post Graduate Program in Automotive Design using CATIA V5</a></p>
+										<p><a href="#">Suspension Design using ADAMS<span class="badge badge-secondary ml-2">Master</span><span class="badge badge-warning ml-2">New</span></a></p>
+										<p><a href="#">MATLAB for Mechanical Engineers</a></p>
+										<p><a href="#">Introduction to Motorsport Engineering<span class="badge badge-secondary ml-2">Master</span></a></p>
+										<p><a href="#">Post Graduate Program in Computational Fluid Dynamics<span class="badge badge-secondary ml-2">Master</span> </a></p>
+										<p><a href="#">Post Graduate Program in Automation & Pre-Processing for FEA & CFD Analysis </a></p>
+										<p><a href="#">Post Graduate Program in External Aerodynamic Simulations<span class="badge badge-secondary ml-2">Master</span></a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					  
+				    </div>
+				  <div class="tab-pane fade" id="electrical" role="tabpanel" aria-labelledby="electrical-tab">
+					<h6>Electrical</h6>
+					<p><a href="#"></a></p>
+				  </div>
+				  <div class="tab-pane fade" id="civil" role="tabpanel" aria-labelledby="civil-tab">
+					<h6>civil</h6>
+					<p><a href="#"></a></p>
+				  </div>
+				   <div class="tab-pane fade" id="computer" role="tabpanel" aria-labelledby="computer-tab">
+					<h6>Computer</h6>
+					<p><a href="#"></a></p>
+				  </div>
+				   <div class="tab-pane fade" id="electronics" role="tabpanel" aria-labelledby="electronics-tab">
+					<h6>Electronics</h6>
+					<p><a href="#"></a></p>
+				  </div>
+				  <div class="tab-pane fade" id="resarchdevelopment" role="tabpanel" aria-labelledby="resarchdevelopment-tab">
+					<h6>Resarch & Development</h6>
+					<p><a href="#"></a></p>
+				  </div>  
+				  <div class="tab-pane fade" id="medicaltechnology" role="tabpanel" aria-labelledby="medicaltechnology-tab">
+					<h6>Medical Technology</h6>
+					<p><a href="#"></a></p>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<footer class="footer_top">
+         <div class="container-fluid bg-dark fixed-bottom">
+            <div class="row row-xs">
+               <div class="col-md-12 pd-10">
+                  <ul class="d-flex justify-content-center  mg-b-0 tx-10" >
+                     <li class="d-flex align-items-center" >
+                        <a href="#" class="tx-white footer-a">&#169; 2022 Skill Lync Inc. All Rights Reserved</a></p>
+                     </li>
+                    
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <!-- JS -->
+      </footer>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/common.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+      <script src="js/select2.min.js"></script>
+      <script src="js/jquery-clockpicker.min.js"></script>
+      <script src="js/feather.min.js"></script>
+      <script src="js/quill.js"></script>
+      <script src="js/typeahead.jquery.min.js"></script>
+      <script src="js/spectrum.js"></script>
+      <script src="js/dashforge.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery.steps.min.js"></script>
+      <script src="js/jquery-clockpicker.min.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <script> 	
+		var toggler = document.getElementsByClassName("caret");
+		var i;
+
+		for (i = 0; i < toggler.length; i++) {
+		  toggler[i].addEventListener("click", function() {
+			this.parentElement.querySelector(".nested").classList.toggle("active");
+			this.classList.toggle("caret-down");
+		  });
+		}
+		
+		$(document).ready(function(){
+			
+			$('#v-pills-fresher-tab').click(function(){
+				console.log('fresher');
+			});
+			$('#v-pills-job-leading-tab').click(function(){
+				console.log('Top Job Leading');
+			});
+			$('#v-pills-sem-tab').click(function(){
+				console.log('Course By Semester');
+			});
+			$('#v-pills-software-tab').click(function(){
+				console.log('Course By Software');
+			});
+			$('.master_course').click(function(){
+				console.log("switch on");
+				$('#hide_p').toggleClass('d-none');
+			});
+			
+			$('.nav_select').select2({
+			  placeholder: 'Type Here'
+			});
+			
+			
+			
+			$(".caret").click(function(){ 
+	
+	var addressValue = $(this).attr("href"); 
+		 $(".tab_scroll .tab-pane").removeClass("active show");
+		 $(addressValue).addClass("active show");
+
+  });
+		});
+	</script>
+   </body>
+</html>
+
+
+
+
+ 
